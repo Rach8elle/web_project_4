@@ -1,0 +1,17 @@
+@import url('./__logo/header__logo.css');
+
+.header {
+  max-width: 882px;
+  width: 100%;
+  height: 74px;
+  margin-top: 45px;
+  border-bottom: 1px solid #545454;
+}
+
+/* mobile */
+@media screen and (min-width: 320px) and (max-width: 435px) {
+  .header {
+    max-width: 320px;
+    margin: 28px 27px 0 0;
+  }
+}

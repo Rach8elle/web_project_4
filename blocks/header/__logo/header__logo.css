@@ -1,0 +1,6 @@
+/* mobile */
+@media screen and (min-width: 320px) and (max-width: 435px) {
+  .header__logo {
+    margin-left: 28px;
+  }
+}
