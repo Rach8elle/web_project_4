@@ -123,6 +123,15 @@
 }
 
 
+.footer {
+  margin-top: 48px;
+}
+
+.footer__copyright {
+  font-size: 18px;
+  line-height: 22px;
+  color: #545454;
+}
 
 
 
