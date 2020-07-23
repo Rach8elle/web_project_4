@@ -1,28 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./pages/index.css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yandex Web Project 4">
-    <meta name="keywords" content="Yandex Web Project 4 Around the US">
-    <meta name="author" content="Rachelle Cottle">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./pages/index.css">
 
-    <title>Yandex Web Project 4: Around the US by Rachelle Cottle</title>
-  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yandex Web Project 4">
+  <meta name="keywords" content="Yandex Web Project 4 Around the US">
+  <meta name="author" content="Rachelle Cottle">
 
-  <body class="page">
-    <div class="page__container">
-      <header class="header">
-        <img src="./images/logo.svg" alt="" class="header__logo">
-      </header>
+  <title>Yandex Web Project 4: Around the US by Rachelle Cottle</title>
+</head>
 
-      <main class="content"></main>
+<body class="page">
+  <div class="page__container">
+    <header class="header">
+      <img src="./images/logo.svg" alt="Around the US" class="header__logo">
+    </header>
 
-      <footer class="footer"></footer>
-    </div>
+    <main class="content">
 
-    <script src="index.js"></script>
-  </body>
+      <section class="profile">
+        <img src="./images/jc.jpg" alt="Jacques Cousteau" class="profile__avatar">
+        <div class="profile__title-container">
+          <h1 class="profile__title">Jacques Cousteau</h1>
+          <p class="profile__subtitle">Explorer</p>
+        </div>
+        <div class="profile__image-container">
+          <img src="./images/edit.svg" alt="Edit icon" class="profile__edit">
+          <img src="./images/add.svg" alt="Add icon" class="profile__add">
+        </div>
+      </section>
+
+      <section class="elements">
+        <ul class="elements__items">
+          <li class="elements__item">
+            <div style="background-image: url('./images/grid_1.jpg')" class="elements__image"></div>
+            <div class="elements__description">
+              <h2 class="elements__title">Yosemite Valley</h2>
+              <img src="./images/like.svg" alt="Like icon" class="elements__like-icon">
+            </div>
+          </li>
+          <li class="elements__item">
+            <div style="background-image: url('./images/grid_2.jpg')" class="elements__image"></div>
+            <div class="elements__description">
+              <h2 class="elements__title">Lake Louise</h2>
+              <img src="./images/like.svg" alt="Like icon" class="elements__like-icon">
+            </div>
+          </li>
+          <li class="elements__item">
+            <div style="background-image: url('./images/grid_3.jpg')" class="elements__image"></div>
+            <div class="elements__description">
+              <h2 class="elements__title">Bald Mountains</h2>
+              <img src="./images/like.svg" alt="Like icon" class="elements__like-icon">
+            </div>
+          </li>
+          <li class="elements__item">
+            <div style="background-image: url('./images/grid_4.jpg')" class="elements__image"></div>
+            <div class="elements__description">
+              <h2 class="elements__title">Latemar</h2>
+              <img src="./images/like.svg" alt="Like icon" class="elements__like-icon">
+            </div>
+          </li>
+          <li class="elements__item">
+            <div style="background-image: url('./images/grid_5.jpg')" class="elements__image"></div>
+            <div class="elements__description">
+              <h2 class="elements__title">Vanoise Nationa...</h2>
+              <img src="./images/like.svg" alt="Like icon" class="elements__like-icon">
+            </div>
+          </li>
+          <li class="elements__item">
+            <div style="background-image: url('./images/grid_6.jpg')" class="elements__image"></div>
+            <div class="elements__description">
+              <h2 class="elements__title">Lago di Braies</h2>
+              <img src="./images/like.svg" alt="Like icon" class="elements__like-icon">
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+
+    <footer class="footer"></footer>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
 </html>
