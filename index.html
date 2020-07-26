@@ -22,15 +22,18 @@
     <main class="content">
 
       <section class="profile">
+
         <img src="./images/jc.jpg" alt="Jacques Cousteau" class="profile__avatar">
-        <div class="profile__title-container">
-          <h1 class="profile__title">Jacques Cousteau</h1>
+        <div class="profile__text-container">
+          <div class="profile__title-container">
+            <h1 class="profile__title">Jacques Cousteau</h1>
+            <button class="button button__edit" aria-label="Edit Button">
+            </button>
+          </div>
           <p class="profile__subtitle">Explorer</p>
         </div>
-        <div class="profile__image-container">
-          <img src="./images/edit.svg" alt="Edit icon" class="profile__edit">
-          <img src="./images/add.svg" alt="Add icon" class="profile__add">
-        </div>
+        <button class="button button__add" aria-label="Add Button">
+        </button>
       </section>
 
       <section class="elements">
@@ -66,7 +69,7 @@
           <li class="elements__item">
             <div style="background-image: url('./images/grid_5.jpg')" class="elements__image"></div>
             <div class="elements__description">
-              <h2 class="elements__title">Vanoise Nationa...</h2>
+              <h2 class="elements__title">Vanoise National Park</h2>
               <img src="./images/like.svg" alt="Like icon" class="elements__like-icon">
             </div>
           </li>
@@ -84,14 +87,21 @@
 
     <footer class="footer">
       <p class="footer__copyright">© 2020 Around The U.S.</p>
-
-
-
-
     </footer>
   </div>
 
-  <script src="index.js"></script>
+  <!-- <div class="modal modal_open">
+    <div class="modal__container">
+      <form action="#" class="form">
+        <h2 class="modal__title">Edit Profile</h2>
+        <input type="text" class="form__input form__input_type_name" value="" placeholder="Name">
+        <input type="text" class="form__input form__input_type_about" value="" placeholder="About">
+        <button type="submit" class="button button__save">Save</button>
+      </form>
+      <button class="button button__close" aria-label="Close Button"></button>
+    </div>
+  </div> -->
+  <script src="./scripts/index.js"></script>
 </body>
 
 </html>

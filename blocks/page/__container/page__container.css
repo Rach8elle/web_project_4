@@ -1,10 +1,11 @@
 
 .page__container {
   max-width: 882px;
+  min-width: 320px;
   margin: 0 auto;
   color: #fff;
-  overflow: hidden;
-   
+  position: relative;
+  overflow: hidden;   
 }
 
 /* mobile */
