@@ -8,26 +8,14 @@
   }
   
   
-  /* wide-screen */
-  @media screen and (min-width: 1280px) {
-    .modal__container {
-      margin-right: 15%;
-    }
-  }
   
   
-  /* tablet */
-  @media screen and (min-width: 600px) and (max-width: 880px) {
-      .modal__container {
-      margin-left: 8%;
-    }
-  }
+  
   
   
   /* mobile */
   @media screen and (max-width: 599px) {
       .modal__container {
       width: 68%;
-      margin-right: 8%;    
     }
   }

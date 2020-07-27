@@ -1,0 +1,36 @@
+.button__edit {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  background: transparent;
+  background-image: url("../../../images/edit.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 20px 24px 0;
+}
+
+.button__edit:hover {
+  opacity: .6;
+}
+
+/* tablet */
+@media screen and (min-width: 600px) and (max-width: 882px) {
+
+  .button__edit  {
+    margin-top: 16px;
+    
+    
+  }
+  
+  }
+  
+  
+  /* mobile */
+  @media screen and (max-width: 599px) {
+
+    .button__edit {
+      margin-top: 15px;
+      margin-right: auto;
+    }
+    }

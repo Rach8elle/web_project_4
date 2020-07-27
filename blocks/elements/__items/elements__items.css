@@ -1,0 +1,15 @@
+.elements__items {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+
+
+/* mobile */
+@media screen and (max-width: 599px) {
+.elements__items {
+  padding-left: 18px;
+}  
+}

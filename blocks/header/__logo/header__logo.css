@@ -6,3 +6,21 @@
 }
 
 
+/* tablet */
+@media screen and (min-width: 600px) and (max-width: 882px) {
+.header__logo {
+  width: 126px;
+
+}
+}
+
+
+/* mobile */
+@media screen and (max-width: 599px) {
+
+  .header__logo {
+    width: 126px;
+  }
+}
+
+

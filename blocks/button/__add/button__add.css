@@ -1,0 +1,25 @@
+.button__add {
+  width: 150px;
+  height: 50px;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-color: transparent;
+  background-image: url("../../../images/add.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.button__add:hover {
+  opacity: .6;
+}
+
+
+/* mobile */
+@media screen and (max-width: 599px) {
+    .button__add {
+    width: 282px;
+  }
+  
+}

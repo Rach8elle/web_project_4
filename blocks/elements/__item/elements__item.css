@@ -1,0 +1,28 @@
+
+.elements__item {
+  margin-right: 18px;
+  margin-bottom: 18px;
+  max-width: 282px;
+  width: 100%;
+}
+
+
+.elements__item:nth-child(3n+3)  {
+  margin-right: 0;
+}
+
+
+/* tablet */
+@media screen and (min-width: 600px) and (max-width: 882px) {
+  .elements__item:nth-child(3)  {
+    margin-right: 18px;
+  }
+}
+
+
+/* mobile */
+@media screen and (max-width: 599px) {
+  .elements__item {
+    margin-right: 0px;
+  }
+}

@@ -11,10 +11,11 @@
 
 
 /* tablet */
-@media screen and (min-width: 600px) and (max-width: 880px) {
+@media screen and (min-width: 600px) and (max-width: 882px) {
   .header {
     max-width: 600px;
     width: 100%;
+    height: 56px;
   }
 
 
@@ -26,5 +27,6 @@
   .header {
     max-width: 320px;
     width: 100%;
+    height: 56px;
   }
 }
