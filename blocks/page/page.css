@@ -4,10 +4,36 @@
   background-color: #000;
   color: #fff;
   font-family: 'Inter', 'Arial', sans-serif;
+  max-width: 1280px;
+  min-width: 300px;
+  width: 100%;
+  margin: 0 auto;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
+}
+
+
+
+/* tablet */
+@media screen and (min-width: 600px) and (max-width: 880px) {
+  .page {
+    max-width: 600px;
+    /* display: flex;
+    flex-direction: column;
+  } */
+
+
+
+}
+
+
+/* mobile */
+@media screen and (min-width: 320px) and (max-width: 599px) {
+  .page {
+    max-width: 320px;
+  }
 }
