@@ -1,0 +1,30 @@
+@import url('../modal/__opened/modal__opened.css');
+@import url('../modal/__container/modal__container.css');
+
+
+
+.modal {
+  background-color: rgba(0, 0, 0, .5);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  flex-direction: column;  
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal_opened {
+  display: flex;
+   display:none;
+}
+
+
+
+/* tablet */
+@media screen and (min-width: 600px) and (max-width: 880px) {
+  .modal {
+    align-items: unset;
+  }
+}

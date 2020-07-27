@@ -5,39 +5,20 @@
 @import url('../blocks/profile/profile.css');
 @import url('../blocks/elements/elements.css');
 @import url('../blocks/footer/footer.css');
+@import url('../blocks/modal/modal.css');
 
 
 
 
-.modal {
-  background-color: rgba(0, 0, 0, .5);
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  display: none;
-}
 
-.modal_opened {
+
+.form {
   display: flex;
-  flex-direction: column;  
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  display:none;
 }
 
-
-.modal__container {
-position: absolute;
-width: 430px;
-height: 330px;
-background: #fff;
-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-border-radius: 10px;
-}
-
-
-.modal__title {
+.form__title {
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;  
@@ -46,13 +27,6 @@ border-radius: 10px;
   margin-top: 34px;
   margin-bottom: 0;
 }
-
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 
 .form__input {
   border-top: none;
@@ -180,7 +154,7 @@ border-radius: 10px;
 
 
 /* mobile */
-@media screen and (min-width: 320px) and (max-width: 599px) {
+@media screen and (max-width: 599px) {
   .content {
     max-width: 320px
   }
@@ -192,6 +166,24 @@ border-radius: 10px;
   .profile__title-container {
 
     margin-top: 17px;
+  }
+
+  .button__save {
+    transform: scale(.7);
+    width: 90%;
+  }
+
+  .button__close {
+    transform: scale(.7);
+  }
+
+  .form__input {
+    width: 75%;
+  }
+
+  .form__title {
+    width: 80%;
+    
   }
   
 }
