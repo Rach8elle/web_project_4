@@ -1,0 +1,23 @@
+
+.form__input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
+  width: 358px;
+  height: 27.26px;
+}
+
+.form__input:focus {
+  outline-color: #d9d9d9;
+}
+
+/* mobile */
+@media screen and (max-width: 599px) {
+  .form__input {
+    width: 75%;
+  }
+}

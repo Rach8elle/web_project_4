@@ -1,0 +1,29 @@
+.profile__title-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+
+
+
+/* tablet */
+@media screen and (min-width: 600px) and (max-width: 882px) {
+
+  .profile__title-container {
+    margin-top: 25px;
+  }
+
+
+
+
+}
+
+
+/* mobile */
+@media screen and (max-width: 599px) {
+.profile__title-container {
+  margin-top: 17px;
+}
+
+  
+}

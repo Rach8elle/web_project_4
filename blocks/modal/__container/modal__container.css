@@ -1,0 +1,21 @@
+.modal__container {
+  position: absolute;
+  width: 430px;
+  height: 330px;
+  background: #fff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* mobile */
+  @media screen and (max-width: 599px) {
+      .modal__container {
+      width: 68%;
+    }
+  }

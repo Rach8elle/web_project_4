@@ -1,0 +1,21 @@
+.content {
+  margin: 0 auto;
+}
+
+
+
+/* tablet */
+@media screen and (min-width: 600px) and (max-width: 882px) {
+  .content {
+    margin: 0 auto;
+  }
+
+}
+
+
+/* mobile */
+@media screen and (max-width: 599px) {
+  .content {
+    max-width: 320px
+  }
+}

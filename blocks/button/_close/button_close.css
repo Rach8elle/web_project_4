@@ -1,0 +1,16 @@
+.button_close {
+  background-image: url("../../../images/close.svg");
+  background-color: transparent;
+  width: 40.7px;
+  height: 40.7px;
+  margin-left: auto;
+  border: none;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+}
+
+.button_close:hover {
+  opacity: .6;
+}
+

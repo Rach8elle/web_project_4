@@ -1,0 +1,38 @@
+.profile__subtitle {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 0;
+  margin: 13px 0 0;
+}
+
+
+/* tablet */
+@media screen and (min-width: 600px) and (max-width: 882px) {
+
+.profile__about {
+   margin-bottom: 36px;
+    align-self: center;
+    
+  
+}
+
+}
+
+
+/* mobile */
+@media screen and (max-width: 599px) {
+ 
+ .profile__about {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    margin-bottom: 36px;
+    margin-top: 3px;
+  }
+  
+}
+
+
+

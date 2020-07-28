@@ -1,0 +1,33 @@
+
+.page__container {
+  max-width: 882px;
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  color: #fff;
+  position: relative;
+  overflow: hidden;   
+}
+
+
+/* tablet */
+@media screen and (min-width: 600px) and (max-width: 882px) {
+  .page__container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
+}
+
+
+/* mobile */
+@media screen and (min-width: 320px) and (max-width: 599px) {
+  .page__container {
+    max-width: 320px;
+  }
+}
+
