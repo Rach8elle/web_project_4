@@ -8,16 +8,15 @@ const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__about');
 
 
-
 function toggleModal() {
   modal.classList.toggle('modal_opened');
+  nameInput.value = profileName.textContent;
+  aboutInput.value = profileAbout.textContent;
 }
 
-
 editModalButton.addEventListener('click', toggleModal);
-
-
 closeModalButton.addEventListener('click', toggleModal);
+
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -26,9 +25,12 @@ form.addEventListener('submit', function (e) {
   profileAbout.textContent = aboutInput.value;
 
   toggleModal();
-
 }
 )
+
+
+
+
 
 
 
