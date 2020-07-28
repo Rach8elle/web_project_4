@@ -1,19 +1,9 @@
-
-
-
-@import url('../button/__add/button__add.css');
-@import url('../button/__close/button__close.css');
-@import url('../button/__edit/button__edit.css');
-@import url('../button/__save/button__save.css');
-@import url('../button/__like/button__like.css');
-
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
+  background-repeat: no-repeat;
+  background-position: center;
+ }
 
-.button:hover {
- transition: .3s ease-in;
-}

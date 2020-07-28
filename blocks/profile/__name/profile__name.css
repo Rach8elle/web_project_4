@@ -1,23 +1,18 @@
-.profile__title {
+.profile__name {
   font-style: normal;
   font-weight: 500;
   font-size: 42px;
   line-height: 56px;
   margin: 0;
- 
 }
-
-
 
 
 /* tablet */
 @media screen and (min-width: 600px) and (max-width: 882px) {
-  .profile__title {
+  .profile__name {
     /* width: 70%; */
     font-size: 32px;
     line-height: 56px;
-
-
   }
 }
 
@@ -25,13 +20,9 @@
 
 /* mobile */
 @media screen and (max-width: 599px) {
-
-  .profile__title {
+  .profile__name {
     font-size: 22px;
     line-height: 56px;
     text-align: center;
-    
   }
-
-  
 }

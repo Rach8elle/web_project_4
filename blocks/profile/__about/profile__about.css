@@ -11,7 +11,7 @@
 /* tablet */
 @media screen and (min-width: 600px) and (max-width: 882px) {
 
-.profile__subtitle {
+.profile__about {
    margin-bottom: 36px;
     align-self: center;
     
@@ -24,7 +24,7 @@
 /* mobile */
 @media screen and (max-width: 599px) {
  
- .profile__subtitle{
+ .profile__about {
     font-size: 14px;
     line-height: 17px;
     text-align: center;
