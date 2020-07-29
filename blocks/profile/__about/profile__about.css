@@ -5,6 +5,7 @@
   line-height: 22px;
   padding: 0;
   margin: 13px 0 0;
+  width: 380px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -12,13 +13,12 @@
 
 
 /* tablet */
-@media screen and (min-width: 600px) and (max-width: 882px) {
+@media screen and (max-width: 882px) {
 
 .profile__about {
    margin-bottom: 36px;
     align-self: center;
-    
-  
+   
 }
 
 }
@@ -33,7 +33,7 @@
     text-align: center;
     margin-bottom: 36px;
     margin-top: 3px;
-  
+    width: 201px;
   }
   
 }

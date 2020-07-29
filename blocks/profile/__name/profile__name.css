@@ -4,6 +4,7 @@
   font-size: 42px;
   line-height: 56px;
   margin: 0;
+  width: 380px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -11,9 +12,8 @@
 
 
 /* tablet */
-@media screen and (min-width: 600px) and (max-width: 882px) {
+@media screen and (max-width: 882px) {
   .profile__name {
-    /* width: 70%; */
     font-size: 32px;
     line-height: 56px;
   }
@@ -27,6 +27,7 @@
     font-size: 22px;
     line-height: 56px;
     text-align: center;
+    width: 201px;
   
   }
 }

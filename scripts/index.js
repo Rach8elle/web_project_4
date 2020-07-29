@@ -9,9 +9,11 @@ const profileAbout = document.querySelector('.profile__about');
 
 
 function toggleModal() {
+  if (modal.classList.contains('modal_opened') === false) {
+    nameInput.value = profileName.textContent;
+    aboutInput.value = profileAbout.textContent;
+  }
   modal.classList.toggle('modal_opened');
-  nameInput.value = profileName.textContent;
-  aboutInput.value = profileAbout.textContent;
 }
 
 editModalButton.addEventListener('click', toggleModal);

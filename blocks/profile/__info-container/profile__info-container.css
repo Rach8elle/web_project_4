@@ -2,26 +2,16 @@
   display: flex;
   flex-direction: column;
   margin-right: auto;
+ 
 }
 
 
 /* tablet */
-@media screen and (min-width: 600px) and (max-width: 882px) {
+@media screen and (max-width: 882px) {
 
  .profile__info-container {
   margin-right: 0;
-  
  }
-
 }
 
 
-/* mobile */
-@media screen and (max-width: 599px) {
-
-.profile__info-container {
-  margin-right: 0;
- 
-}
-  
-}
