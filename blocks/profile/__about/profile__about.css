@@ -13,14 +13,13 @@
 
 
 /* tablet */
-@media screen and (max-width: 882px) {
+@media screen and (min-width: 600px) and (max-width: 882px) {
 
 .profile__about {
    margin-bottom: 36px;
     align-self: center;
-   
+    width: 73px;
 }
-
 }
 
 
@@ -31,11 +30,12 @@
     font-size: 14px;
     line-height: 17px;
     text-align: center;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
     margin-top: 3px;
+    margin-right: 18px;
+    margin-left: 36px;
     width: 201px;
   }
-  
 }
 
 

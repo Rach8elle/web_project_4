@@ -16,7 +16,7 @@
 /* mobile */
 @media screen and (max-width: 599px) {
   .header__logo {
-     margin-bottom: -28px;
+    margin-bottom: -38px;
      margin-left: 27px;
   }
 }

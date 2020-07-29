@@ -12,10 +12,11 @@
 
 
 /* tablet */
-@media screen and (max-width: 882px) {
+@media screen and (min-width: 600px) and (max-width: 882px) {
   .profile__name {
     font-size: 32px;
     line-height: 56px;
+    width: 300px;
   }
 }
 
@@ -28,6 +29,7 @@
     line-height: 56px;
     text-align: center;
     width: 201px;
+    margin-left: 36px;
   
   }
 }

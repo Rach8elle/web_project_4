@@ -18,6 +18,8 @@
 @media screen and (max-width: 599px) {
     .button__add {
     width: 282px;
+    background-size: 16px;
+    margin-right: 1px;
   }
   
 }

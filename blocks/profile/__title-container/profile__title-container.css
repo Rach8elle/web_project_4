@@ -16,6 +16,8 @@
 /* mobile */
 @media screen and (max-width: 599px) {
 .profile__title-container {
-  margin-top: 17px;
+  margin-top: 11px;
+  margin-bottom: -6px;
+ 
   }  
 }

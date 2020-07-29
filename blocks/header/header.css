@@ -6,12 +6,13 @@
   height: 74px;
   border-bottom: 1px solid #545454;
   margin: 45px auto 0
+
 }
 
 
 
 /* tablet */
-@media screen and (min-width: 600px) and (max-width: 882px) {
+@media screen and (max-width: 882px) {
   .header {
     max-width: 600px;
     height: 56px;
@@ -23,5 +24,7 @@
   .header {
     max-width: 320px;
    margin-top: 28px;
+   padding-bottom: 27px;
+   margin-top: 0;
   }
 }
