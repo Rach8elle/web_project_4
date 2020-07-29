@@ -1,4 +1,4 @@
-.button_close {
+.button__close {
   background-image: url("../../../images/close.svg");
   background-color: transparent;
   width: 40.7px;
@@ -10,7 +10,7 @@
   right: -40px;
 }
 
-.button_close:hover {
+.button__close:hover {
   opacity: .6;
 }
 

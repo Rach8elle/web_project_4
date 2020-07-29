@@ -1,3 +1,5 @@
+@import url('./__input_type_about/form__input_type_about.css');
+@import url('./__input_type_name/form__input_type_name.css');
 
 .form__input {
   border-top: none;
@@ -11,9 +13,7 @@
   height: 27.26px;
 }
 
-.form__input:focus {
-  outline-color: #d9d9d9;
-}
+
 
 /* mobile */
 @media screen and (max-width: 599px) {

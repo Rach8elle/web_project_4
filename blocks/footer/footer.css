@@ -3,7 +3,7 @@
 
 
 .footer {
-  margin: 48px auto 0;
+  margin: 48px auto 60px;
   max-width: 882px;
   width: 100%;
 }
@@ -13,9 +13,8 @@
 /* tablet */
 @media screen and (min-width: 600px) and (max-width: 882px) {
   .footer {
-    margin: 48px auto 0;
     max-width: 600px;
-    width: 100%;
+    margin: 18px auto 35px;
   }
 }
 
@@ -23,9 +22,8 @@
 /* mobile */
 @media screen and (min-width: 320px) and (max-width: 599px) {
    .footer {
-    margin: 40px auto 30px;
+    margin: 28px auto 30px;
     max-width: 282px;;
-    width: 100%;
   }
   
 }

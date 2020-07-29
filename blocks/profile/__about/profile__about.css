@@ -1,10 +1,14 @@
-.profile__subtitle {
+.profile__about {
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
   padding: 0;
   margin: 13px 0 0;
+  width: 380px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 
@@ -14,10 +18,8 @@
 .profile__about {
    margin-bottom: 36px;
     align-self: center;
-    
-  
+    width: 73px;
 }
-
 }
 
 
@@ -28,10 +30,12 @@
     font-size: 14px;
     line-height: 17px;
     text-align: center;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
     margin-top: 3px;
+    margin-right: 18px;
+    margin-left: 36px;
+    width: 201px;
   }
-  
 }
 
 

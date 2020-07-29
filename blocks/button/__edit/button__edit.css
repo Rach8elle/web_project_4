@@ -1,4 +1,4 @@
-.button_edit {
+.button__edit {
   width: 24px;
   height: 24px;
   border: 1px solid #fff;
@@ -10,13 +10,13 @@
   background-position: center;
 }
 
-.button_edit:hover {
+.button__edit:hover {
   opacity: .6;
 }
 
 /* tablet */
 @media screen and (min-width: 600px) and (max-width: 882px) {
-  .button_edit  {
+  .button__edit  {
     margin-top: 16px;
   }
 }
@@ -24,8 +24,9 @@
   
   /* mobile */
   @media screen and (max-width: 599px) {
-    .button_edit {
-      margin-top: 15px;
-      margin-right: auto;
+    .button__edit {
+      margin-left: 13px;
+      width: 18px;
+      height: 18px;
     }
   }

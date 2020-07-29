@@ -1,5 +1,5 @@
-const editModalButton = document.querySelector('.button_edit');
-const closeModalButton = document.querySelector('.button_close');
+const editModalButton = document.querySelector('.button__edit');
+const closeModalButton = document.querySelector('.button__close');
 const modal = document.querySelector('.modal');
 const form = document.querySelector('.form');
 const nameInput = document.querySelector('.form__input_type_name');
@@ -9,13 +9,16 @@ const profileAbout = document.querySelector('.profile__about');
 
 
 function toggleModal() {
+  if (modal.classList.contains('modal_opened') === false) {
+    nameInput.value = profileName.textContent;
+    aboutInput.value = profileAbout.textContent;
+  }
   modal.classList.toggle('modal_opened');
-  nameInput.value = profileName.textContent;
-  aboutInput.value = profileAbout.textContent;
 }
 
 editModalButton.addEventListener('click', toggleModal);
 closeModalButton.addEventListener('click', toggleModal);
+
 
 
 form.addEventListener('submit', function (e) {
@@ -27,14 +30,3 @@ form.addEventListener('submit', function (e) {
   toggleModal();
 }
 )
-
-
-
-
-
-
-
-
-
-
-
