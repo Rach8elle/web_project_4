@@ -1,5 +1,5 @@
-const editModalButton = document.querySelector('.button_edit');
-const closeModalButton = document.querySelector('.button_close');
+const editModalButton = document.querySelector('.button__edit');
+const closeModalButton = document.querySelector('.button__close');
 const modal = document.querySelector('.modal');
 const form = document.querySelector('.form');
 const nameInput = document.querySelector('.form__input_type_name');
@@ -18,6 +18,7 @@ editModalButton.addEventListener('click', toggleModal);
 closeModalButton.addEventListener('click', toggleModal);
 
 
+
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -27,14 +28,3 @@ form.addEventListener('submit', function (e) {
   toggleModal();
 }
 )
-
-
-
-
-
-
-
-
-
-
-

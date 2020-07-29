@@ -1,10 +1,13 @@
-.profile__subtitle {
+.profile__about {
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
   padding: 0;
   margin: 13px 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 
@@ -30,6 +33,7 @@
     text-align: center;
     margin-bottom: 36px;
     margin-top: 3px;
+  
   }
   
 }

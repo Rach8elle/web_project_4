@@ -24,12 +24,12 @@
         <div class="profile__info-container">
           <div class="profile__title-container">
             <h1 class="profile__name">Jacques Cousteau</h1>
-            <button class="button button_edit" aria-label="Edit Button">
+            <button class="button button__edit" aria-label="Edit Button" type="button">
             </button>
           </div>
           <p class="profile__about">Explorer</p>
         </div>
-        <button class="button button_add" aria-label="Add Button">
+        <button class="button button__add" aria-label="Add Button" type="button">
         </button>
       </section>
       <section class="elements">
@@ -38,14 +38,14 @@
             <div style="background-image: url('./images/grid_1.jpg')" class="elements__image"></div>
             <div class="elements__description">
               <h2 class="elements__title">Yosemite Valley</h2>
-              <button class="elements__like-button" aria-label="Like Button"></button>
+              <button class="elements__like-button" aria-label="Like Button" type="button"></button>
             </div>
           </li>
           <li class="elements__item">
             <div style="background-image: url('./images/grid_2.jpg')" class="elements__image"></div>
             <div class="elements__description">
               <h2 class="elements__title">Lake Louise</h2>
-              <button class="elements__like-button" aria-label="Like Button"></button>
+              <button class="elements__like-button" aria-label="Like Button" type="button"></button>
             </div>
           </li>
           <li class="elements__item">
@@ -59,21 +59,21 @@
             <div style="background-image: url('./images/grid_4.jpg')" class="elements__image"></div>
             <div class="elements__description">
               <h2 class="elements__title">Latemar</h2>
-              <button class="elements__like-button" aria-label="Like Button"></button>
+              <button class="elements__like-button" aria-label="Like Button" type="button"></button>
             </div>
           </li>
           <li class="elements__item">
             <div style="background-image: url('./images/grid_5.jpg')" class="elements__image"></div>
             <div class="elements__description">
               <h2 class="elements__title">Vanoise National Park</h2>
-              <button class="elements__like-button" aria-label="Like Button"></button>
+              <button class="elements__like-button" aria-label="Like Button" type="button"></button>
             </div>
           </li>
           <li class="elements__item">
             <div style="background-image: url('./images/grid_6.jpg')" class="elements__image"></div>
             <div class="elements__description">
               <h2 class="elements__title">Lago di Braies</h2>
-              <button class="elements__like-button" aria-label="Like Button"></button>
+              <button class="elements__like-button" aria-label="Like Button" type="button"></button>
             </div>
           </li>
         </ul>
@@ -85,13 +85,13 @@
   </div>
   <div class="modal">
     <div class="modal__container">
-      <form action="#" class="form">
-        <h2 class="form__title">Edit Profile</h2>
+      <form action="#" class="form" method="post">
+        <h3 class="form__title">Edit Profile</h3>
         <input type="text" class="form__input form__input_type_name" value="" placeholder="Name" required>
         <input type="text" class="form__input form__input_type_about" value="" placeholder="About Me" required>
-        <button type="submit" class="button button_save">Save</button>
+        <button type="submit" class="button button__save">Save</button>
       </form>
-      <button class="button button_close" aria-label="Close Button"></button>
+      <button class="button button__close" aria-label="Close Button"></button>
     </div>
   </div>
   <script src="./scripts/index.js"></script>

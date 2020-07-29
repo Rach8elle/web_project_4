@@ -1,7 +1,5 @@
-@import url('../form/__input/form__input.css');
-@import url('../form/__input_type_about/form__input_type_about.css');
-@import url('../form/__input_type_name/form__input_type_name.css');
-@import url('../form/__title/form__title.css');
+@import url('./__input/form__input.css');
+@import url('./__title/form__title.css');
 
 
 .form {

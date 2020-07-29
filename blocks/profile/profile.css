@@ -1,8 +1,8 @@
-@import url('../profile/__avatar/profile__avatar.css');
-@import url('../profile/__info-container/profile__info-container.css');
-@import url('../profile/__about/profile__about.css');
-@import url('../profile/__title-container/profile__title-container.css');
-@import url('../profile/__name/profile__name.css');
+@import url('./__avatar/profile__avatar.css');
+@import url('./__info-container/profile__info-container.css');
+@import url('./__about/profile__about.css');
+@import url('./__title-container/profile__title-container.css');
+@import url('./__name/profile__name.css');
 
 
 
@@ -13,25 +13,11 @@
 }
 
 
-
 /* tablet */
-@media screen and (min-width: 600px) and (max-width: 882px) {
-
+@media screen and (max-width: 882px) {
   .profile {
     flex-direction: column;
-   
   }
-
 }
-/* mobile */
-@media screen and (max-width: 599px) {
-
-.profile {
-    flex-direction: column;
-    
-  }
-
-}
-
 
 

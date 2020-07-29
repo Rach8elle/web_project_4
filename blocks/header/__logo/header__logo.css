@@ -1,25 +1,23 @@
-/* mobile */
-@media screen and (max-width: 599px) {
   .header__logo {
-    margin-left: 28px;
+    width: 173px;
+    height: 33px;
   }
-}
+
 
 
 /* tablet */
-@media screen and (min-width: 600px) and (max-width: 882px) {
+@media screen and (max-width: 882px) {
 .header__logo {
   width: 126px;
-
+  height: 24px;
 }
 }
-
 
 /* mobile */
 @media screen and (max-width: 599px) {
-
   .header__logo {
-    width: 126px;
+     margin-bottom: -28px;
+     margin-left: 27px;
   }
 }
 

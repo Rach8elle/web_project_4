@@ -1,9 +1,9 @@
-@import url('../elements/__description/elements__description.css');
-@import url('../elements/__image/elements__image.css');
-@import url('../elements/__item/elements__item.css');
-@import url('../elements/__items/elements__items.css');
-@import url('../elements/__title/elements__title.css');
-@import url('../elements/__like-button/elements__like-button.css');
+@import url('./__description/elements__description.css');
+@import url('./__image/elements__image.css');
+@import url('./__item/elements__item.css');
+@import url('./__items/elements__items.css');
+@import url('./__title/elements__title.css');
+@import url('./__like-button/elements__like-button.css');
 
 
 

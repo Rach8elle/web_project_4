@@ -1,5 +1,5 @@
 
-.button_save {
+.button__save {
   width: 358px;
   height: 50.15px;
   background: #000000;
@@ -13,13 +13,13 @@
  
 }
 
-.button_save:hover {
+.button__save:hover {
   opacity: .8;
 }
 
 /* mobile */
 @media screen and (max-width: 599px) {
-   .button_save {
+   .button__save {
      width: 90%;
   }
 }

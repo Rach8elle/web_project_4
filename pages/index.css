@@ -9,10 +9,6 @@
 @import url('../blocks/modal/_opened/modal_opened.css');
 @import url('../blocks/form/form.css');
 @import url('../blocks/button/button.css');
-@import url('../blocks/button/_add/button_add.css');
-@import url('../blocks/button/_close/button_close.css');
-@import url('../blocks/button/_edit/button_edit.css');
-@import url('../blocks/button/_save/button_save.css');
 @import url('../blocks/content/content.css');
 
 
