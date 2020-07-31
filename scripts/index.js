@@ -1,5 +1,5 @@
-const editModalButton = document.querySelector('.button__edit');
-const closeModalButton = document.querySelector('.button__close');
+const editModalButton = document.querySelector('.profile__edit-button');
+const closeModalButton = document.querySelector('.modal__close-button');
 const modal = document.querySelector('.modal');
 const form = document.querySelector('.form');
 const nameInput = document.querySelector('.form__input_type_name');
@@ -29,4 +29,4 @@ form.addEventListener('submit', function (e) {
 
   toggleModal();
 }
-)
+);
