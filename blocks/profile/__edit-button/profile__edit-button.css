@@ -1,4 +1,4 @@
-.button__edit {
+.profile__edit-button {
   width: 24px;
   height: 24px;
   border: 1px solid #fff;
@@ -8,15 +8,19 @@
   margin: 20px 24px 0;
   background-repeat: no-repeat;
   background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-.button__edit:hover {
+.profile__edit-button:hover {
   opacity: .6;
 }
 
 /* tablet */
 @media screen and (min-width: 600px) and (max-width: 882px) {
-  .button__edit  {
+  .profile__edit-button  {
     margin-top: 16px;
   }
 }
@@ -24,7 +28,7 @@
   
   /* mobile */
   @media screen and (max-width: 599px) {
-    .button__edit {
+    .profile__edit-button {
       margin-left: 13px;
       width: 18px;
       height: 18px;

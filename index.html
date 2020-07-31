@@ -24,12 +24,12 @@
         <div class="profile__info-container">
           <div class="profile__title-container">
             <h1 class="profile__name">Jacques Cousteau</h1>
-            <button class="button button__edit" aria-label="Edit Button" type="button">
+            <button class="profile__edit-button" aria-label="Edit Button" type="button">
             </button>
           </div>
           <p class="profile__about">Explorer</p>
         </div>
-        <button class="button button__add" aria-label="Add Button" type="button">
+        <button class="profile__add-button" aria-label="Add Button" type="button">
         </button>
       </section>
       <section class="elements">
@@ -85,13 +85,13 @@
   </div>
   <div class="modal">
     <div class="modal__container">
-      <form action="#" class="form" method="post">
+      <form action="#" class="form" method="post" name="profile">
         <h3 class="form__title">Edit Profile</h3>
         <input type="text" class="form__input form__input_type_name" value="" placeholder="Name">
         <input type="text" class="form__input form__input_type_about" value="" placeholder="About Me">
-        <button type="submit" class="button button__save">Save</button>
+        <button type="submit" class="form__save-button">Save</button>
       </form>
-      <button class="button button__close" aria-label="Close Button" type="button"></button>
+      <button class="modal__close-button" aria-label="Close Button" type="button"></button>
     </div>
   </div>
   <script src="./scripts/index.js"></script>

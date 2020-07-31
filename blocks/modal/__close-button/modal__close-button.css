@@ -1,4 +1,4 @@
-.button__close {
+.modal__close-button {
   background-image: url("../../../images/close.svg");
   background-color: transparent;
   width: 40.7px;
@@ -8,9 +8,15 @@
   position: absolute;
   top: -40px;
   right: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.button__close:hover {
+.modal__close-button:hover {
   opacity: .6;
 }
 
