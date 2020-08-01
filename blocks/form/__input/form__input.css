@@ -1,5 +1,5 @@
-@import url('./_type_about/form__input_type_about.css');
-@import url('./_type_name/form__input_type_name.css');
+@import url('./_type/form__input_type_about.css');
+@import url('./_type/form__input_type_name.css');
 
 .form__input {
   border-top: none;
