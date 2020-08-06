@@ -59,8 +59,11 @@ const initialCards = [
   }
 ];
 
+const cardTemplate = document.querySelector('.card-template').content.querySelector('.elements__item');
+const list = document.querySelector('.elements__items');
+
 initialCards.forEach(data => {
-  const cardTemplate = document.querySelector('.card-template').content.querySelector('.elements__item');
+
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector('.elements__image');
   const cardTitle = cardElement.querySelector('.elements__title');
@@ -70,11 +73,19 @@ initialCards.forEach(data => {
   cardTitle.textContent = data.name;
   cardImage.style.backgroundImage = `url(${data.link})`;
 
-  const list = document.querySelector('.elements__items');
+  cardLikeButton.addEventListener('click', () => {
+    //changeLikeState()
+  });
+
+  cardDeleteButton.addEventListener('click', () => {
+    //handleCardDeleteClick()
+  });
+
+  cardImage.addEventListener('click', () => {
+    //open modal
+  });
 
   list.prepend(cardElement);
-
-
 });
 
 
