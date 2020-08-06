@@ -34,48 +34,6 @@
       </section>
       <section class="elements">
         <ul class="elements__items">
-          <li class="elements__item">
-            <div style="background-image: url('./images/grid_1.jpg')" class="elements__image"></div>
-            <div class="elements__description">
-              <h2 class="elements__title">Yosemite Valley</h2>
-              <button class="elements__like-button" aria-label="Like Button" type="button"></button>
-            </div>
-          </li>
-          <li class="elements__item">
-            <div style="background-image: url('./images/grid_2.jpg')" class="elements__image"></div>
-            <div class="elements__description">
-              <h2 class="elements__title">Lake Louise</h2>
-              <button class="elements__like-button" aria-label="Like Button" type="button"></button>
-            </div>
-          </li>
-          <li class="elements__item">
-            <div style="background-image: url('./images/grid_3.jpg')" class="elements__image"></div>
-            <div class="elements__description">
-              <h2 class="elements__title">Bald Mountains</h2>
-              <button class="elements__like-button" aria-label="Like Button"></button>
-            </div>
-          </li>
-          <li class="elements__item">
-            <div style="background-image: url('./images/grid_4.jpg')" class="elements__image"></div>
-            <div class="elements__description">
-              <h2 class="elements__title">Latemar</h2>
-              <button class="elements__like-button" aria-label="Like Button" type="button"></button>
-            </div>
-          </li>
-          <li class="elements__item">
-            <div style="background-image: url('./images/grid_5.jpg')" class="elements__image"></div>
-            <div class="elements__description">
-              <h2 class="elements__title">Vanoise National Park</h2>
-              <button class="elements__like-button" aria-label="Like Button" type="button"></button>
-            </div>
-          </li>
-          <li class="elements__item">
-            <div style="background-image: url('./images/grid_6.jpg')" class="elements__image"></div>
-            <div class="elements__description">
-              <h2 class="elements__title">Lago di Braies</h2>
-              <button class="elements__like-button" aria-label="Like Button" type="button"></button>
-            </div>
-          </li>
         </ul>
       </section>
     </main>
@@ -94,6 +52,16 @@
       <button class="modal__close-button" aria-label="Close Button" type="button"></button>
     </div>
   </div>
+  <template class="card-template">
+    <li class="elements__item">
+      <button class="elements__delete-button" aria-label="Delete Button" type="button"></button>
+      <div style="" class="elements__image"></div>
+      <div class="elements__description">
+        <h2 class="elements__title"></h2>
+        <button class="elements__like-button" aria-label="Like Button" type="button"></button>
+      </div>
+    </li>
+  </template>
   <script src="./scripts/index.js"></script>
 </body>
 
