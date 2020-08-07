@@ -6,7 +6,7 @@ const addCardModalWindow = document.querySelector('.modal_type_add-card');
 //Buttons and other DOM elements
 const editModalButton = document.querySelector('.profile__edit-button');
 const closeModalButton = document.querySelector('.modal__close-button');
-const addCardModalButton = document.querySelector('profile__add-button');
+const addCardModalButton = document.querySelector('.profile__add-button');
 
 
 //Profile section
@@ -43,9 +43,9 @@ editModalButton.addEventListener('click', () => {
 closeModalButton.addEventListener('click', toggleModalWindow);
 
 
-// addCardModalButton.addEventListener('click', () => {
-//   addCardModalWindow.classList.add('modal_opened');
-// });
+addCardModalButton.addEventListener('click', () => {
+  addCardModalWindow.classList.add('modal_opened');
+});
 
 
 const initialCards = [
