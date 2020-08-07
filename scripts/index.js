@@ -1,12 +1,13 @@
 //wrappers
 const modal = document.querySelector('.modal');
 const form = document.querySelector('.form');
+const addCardModalWindow = document.querySelector('.modal_type_add-card');
 
 //Buttons and other DOM elements
 const editModalButton = document.querySelector('.profile__edit-button');
 const closeModalButton = document.querySelector('.modal__close-button');
 const addCardModalButton = document.querySelector('profile__add-button');
-const addCardModalWindow = document.querySelector('.modal_type_add-card');
+
 
 //Profile section
 const profileName = document.querySelector('.profile__name');
@@ -17,25 +18,29 @@ const nameInput = document.querySelector('.form__input_type_name');
 const aboutInput = document.querySelector('.form__input_type_about');
 
 
-function toggleModal() {
+
+function toggleModalWindow() {
   modal.classList.toggle('modal_opened');
+}
+
+function formSubmitHandler(evt) {
+  evt.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileAbout.textContent = aboutInput.value;
+  toggleModalWindow();
+}
+
+form.addEventListener('submit', formSubmitHandler);
+editModalButton.addEventListener('click', () => {
   if (!modal.classList.contains('modal_opened')) {
     nameInput.value = profileName.textContent;
     aboutInput.value = profileAbout.textContent;
   }
+  toggleModalWindow();
+});
 
-}
 
-editModalButton.addEventListener('click', toggleModal);
-closeModalButton.addEventListener('click', toggleModal);
-
-form.addEventListener('submit', function (e) {
-  e.preventDefault();
-  profileName.textContent = nameInput.value;
-  profileAbout.textContent = aboutInput.value;
-  toggleModal();
-}
-);
+closeModalButton.addEventListener('click', toggleModalWindow);
 
 
 // addCardModalButton.addEventListener('click', () => {
