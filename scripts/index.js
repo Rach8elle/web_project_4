@@ -1,13 +1,21 @@
 //wrappers
-// const modal = document.querySelector('.modal');
 const form = document.querySelector('.form');
 const addCardModalWindow = document.querySelector('.modal_type_add-card');
 const editProfileModalWindow = document.querySelector('.modal_type_edit-profile');
 
-//Buttons and other DOM elements
+//openButtons
 const editModalButton = document.querySelector('.profile__edit-button');
-const closeModalButton = document.querySelector('.modal__close-button');
 const addCardModalButton = document.querySelector('.profile__add-button');
+
+
+//closeButtons
+
+const closeAddCardModalButton = addCardModalWindow.querySelector('.modal__close-button');
+const closeModalButton = editProfileModalWindow.querySelector('.modal__close-button');
+
+
+//Buttons and other DOM elements
+
 
 
 //Profile section
@@ -49,8 +57,12 @@ closeModalButton.addEventListener('click', () => {
 
 addCardModalButton.addEventListener('click', () => {
   toggleModalWindow(addCardModalWindow);
-
 });
+
+closeAddCardModalButton.addEventListener('click', () => {
+  toggleModalWindow(addCardModalWindow);
+})
+
 
 
 const initialCards = [
