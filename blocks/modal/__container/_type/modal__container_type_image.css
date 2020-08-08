@@ -3,6 +3,8 @@
   height: 540px;
   position: absolute;
   background: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
  /* mobile */
