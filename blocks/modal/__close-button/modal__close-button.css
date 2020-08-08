@@ -22,3 +22,12 @@
   opacity: .6;
 }
 
+
+/* mobile */
+@media screen and (max-width: 599px) {
+ .modal__close-button{
+  transform: scale(.7);
+   top: -32px;
+   right: -32px;
+ }
+}

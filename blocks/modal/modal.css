@@ -3,7 +3,7 @@
 @import url('./__container/_type/modal__container_type_image.css');
 @import url('./__image/modal__image.css');
 @import url('./__image/modal__image-title.css');
-@import url('./__close-button/_type/modal__close-button_type_image.css');
+@import url('./__figure/modal__figure.css');
 
 
 .modal {

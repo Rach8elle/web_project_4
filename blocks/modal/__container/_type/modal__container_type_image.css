@@ -4,3 +4,13 @@
   position: absolute;
   background: none;
 }
+
+ /* mobile */
+ @media screen and (max-width: 599px) {
+  .modal__container_type_image {
+   /* max-width: 75vw;
+  max-height: 75vh; */
+  max-width: 240px;
+  max-height: 299px;
+}
+}
