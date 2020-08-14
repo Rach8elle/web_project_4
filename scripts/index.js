@@ -132,6 +132,3 @@ initialCards.forEach(data => {
 
   list.prepend(cardElement);
 });
-
-
-
