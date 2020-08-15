@@ -1,5 +1,5 @@
 //wrappers
-const form = document.querySelector('.form');
+const formEditProfile = document.querySelector('.form_type_edit-profile');
 const formAddCard = document.querySelector('.form_type_add-card');
 const addCardModalWindow = document.querySelector('.modal_type_add-card');
 const editProfileModalWindow = document.querySelector('.modal_type_edit-profile');
@@ -18,6 +18,7 @@ const closeProfileModalButton = editProfileModalWindow.querySelector('.modal__cl
 const closeImageModalButton = imageModalWindow.querySelector('.modal__close-button');
 
 
+
 //Profile section
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__about');
@@ -26,6 +27,10 @@ const profileAbout = document.querySelector('.profile__about');
 //Form Inputs
 const nameInput = document.querySelector('.form__input_type_name');
 const aboutInput = document.querySelector('.form__input_type_about');
+const cardImageLinkInput = document.querySelector('.form__input_type_url');
+const cardTitleInput = document.querySelector('.form__input_type_card-title');
+
+
 
 
 
@@ -40,7 +45,7 @@ function formSubmitHandler(evt) {
   toggleModalWindow(editProfileModalWindow);
 }
 
-form.addEventListener('submit', formSubmitHandler);
+formEditProfile.addEventListener('submit', formSubmitHandler);
 editModalButton.addEventListener('click', () => {
   if (!editProfileModalWindow.classList.contains('modal_opened')) {
     nameInput.value = profileName.textContent;
@@ -125,7 +130,7 @@ function addCard(title, imageLink) {
   });
 
   cardDeleteButton.addEventListener('click', () => {
-    const list = cardDelete.closest('.elements__items');
+    const list = cardDeleteButton.closest('.elements__item');
     list.remove();
   });
 
@@ -143,4 +148,11 @@ function addCard(title, imageLink) {
 }
 
 
+
+formAddCard.addEventListener("submit", (event) => {
+  event.preventDefault();
+  addCard(cardTitleInput.value, cardImageLinkInput.value);
+  toggleModalWindow(addCardModalWindow);
+}
+);
 
