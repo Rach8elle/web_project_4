@@ -1,5 +1,6 @@
 //wrappers
 const form = document.querySelector('.form');
+const formAddCard = document.querySelector('.form_type_add-card');
 const addCardModalWindow = document.querySelector('.modal_type_add-card');
 const editProfileModalWindow = document.querySelector('.modal_type_edit-profile');
 const imageModalWindow = document.querySelector('.modal_type_image');
@@ -20,6 +21,7 @@ const closeImageModalButton = imageModalWindow.querySelector('.modal__close-butt
 //Profile section
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__about');
+
 
 //Form Inputs
 const nameInput = document.querySelector('.form__input_type_name');
@@ -62,7 +64,6 @@ closeAddCardModalButton.addEventListener('click', () => {
   toggleModalWindow(addCardModalWindow);
 })
 
-//closeImageModal
 closeImageModalButton.addEventListener('click', () => {
   toggleModalWindow(imageModalWindow);
 })
@@ -101,14 +102,21 @@ const cardTemplate = document.querySelector('.card-template').content.querySelec
 const list = document.querySelector('.elements__items');
 
 initialCards.forEach(data => {
+  addCard(data.name, data.link);
+}
+);
+
+
+function addCard(title, imageLink) {
 
   const cardElement = cardTemplate.cloneNode(true);
+
   const cardImage = cardElement.querySelector('.elements__image');
   const cardTitle = cardElement.querySelector('.elements__title');
   const cardDeleteButton = cardElement.querySelector('.elements__delete-button');
 
-  cardTitle.textContent = data.name;
-  cardImage.style.backgroundImage = `url(${data.link})`;
+  cardTitle.textContent = title;
+  cardImage.style.backgroundImage = `url(${imageLink})`;
 
 
 
@@ -117,18 +125,22 @@ initialCards.forEach(data => {
   });
 
   cardDeleteButton.addEventListener('click', () => {
-    //handleCardDeleteClick()
+    const list = cardDelete.closest('.elements__items');
+    list.remove();
   });
 
   cardImage.addEventListener('click', () => {
     const modalImage = imageModalWindow.querySelector('.modal__image');
     const modalImageTitle = imageModalWindow.querySelector('.modal__image-title');
 
-    modalImage.src = data.link;
-    modalImageTitle.textContent = data.name;
+    modalImage.src = imageLink;
+    modalImageTitle.textContent = title;
 
     toggleModalWindow(imageModalWindow);
   });
 
   list.prepend(cardElement);
-});
+}
+
+
+
