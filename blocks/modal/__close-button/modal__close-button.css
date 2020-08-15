@@ -1,3 +1,5 @@
+
+
 .modal__close-button {
   background-image: url("../../../images/close.svg");
   background-color: transparent;
@@ -20,3 +22,13 @@
   opacity: .6;
 }
 
+
+/* mobile */
+@media screen and (max-width: 599px) {
+ .modal__close-button{
+  top: -32px;
+  right: -32px;
+  transform: scale(.7);
+  
+ }
+}
