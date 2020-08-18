@@ -92,12 +92,18 @@ const initialCards = [
     link: "https://code.s3.yandex.net/web-code/lago.jpg",
   },
 ];
-
 initialCards.forEach((data) => {
-  addCard(data.name, data.link);
+  list.prepend(createCard(data.name, data.link));
 });
 
-function addCard(title, imageLink) {
+formAddCard.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  list.prepend(createCard(cardTitleInput.value, cardImageLinkInput.value));
+  toggleModalWindow(addCardModalWindow);
+});
+
+
+function createCard(title, imageLink) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector(".elements__image");
   const cardTitle = cardElement.querySelector(".elements__title");
@@ -128,12 +134,8 @@ function addCard(title, imageLink) {
     toggleModalWindow(imageModalWindow);
   });
 
-  list.prepend(cardElement);
+  return cardElement;
 }
 
-formAddCard.addEventListener("submit", (event) => {
-  event.preventDefault();
-  addCard(cardTitleInput.value, cardImageLinkInput.value);
-  toggleModalWindow(addCardModalWindow);
-});
+
 
