@@ -1,12 +1,6 @@
 .modal__image {
-width: 433px;
-height: 540px;
+    max-width: 75vw;
+    max-height: 75vh;
+    position: relative;
 }
 
- /* mobile */
- @media screen and (max-width: 599px) {
-  .modal__image {
-     max-width: 240px;
-    max-height: 299px;
-}
-}
