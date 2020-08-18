@@ -5,14 +5,15 @@
   background: none;
   border-radius: 0;
   box-shadow: none;
+  max-width: 75vw;
+  max-height: 75vh;
 }
 
  /* mobile */
  @media screen and (max-width: 599px) {
   .modal__container_type_image {
-   /* max-width: 75vw;
-  max-height: 75vh; */
-  max-width: 240px;
-  max-height: 299px;
+ 
+  width: 240px;
+  height: 299px;
 }
 }
