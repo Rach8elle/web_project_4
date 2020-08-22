@@ -29,7 +29,6 @@ function checkInputValidity(input, form, rest) {
 
 function toggleButtonState(inputs, button, { inactiveButtonClass, ...rest }) {
     const isValid = inputs.every((input) => input.validity.valid)
-
     if (isValid) {
         button.classList.remove(inactiveButtonClass);
     } else {
@@ -54,7 +53,7 @@ function enableValidation({ formSelector, inputSelector, submitButtonSelector, .
         inputs.forEach((input) => {
             input.addEventListener('input', () => {
                 checkInputValidity(input, form, rest);
-                toggleButtonState(inputs, form, rest);
+                toggleButtonState(inputs, button, rest);
             })
         })
     })
@@ -69,3 +68,12 @@ enableValidation({
     inputErrorClass: "form__input_type_error",
     errorClass: "form__error_visible"
 });
+
+// function closeModal
+
+// $(document).click(function(event) {
+//     //if you click on anything except the modal itself or the "open modal" link, close the modal
+//     if (!$(event.target).closest(".modal,.js-open-modal").length) {
+//         $("body").find(".modal").removeClass("modal_opened");
+//     }
+// });

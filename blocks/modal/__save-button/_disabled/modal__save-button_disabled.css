@@ -1,8 +1,7 @@
 .modal__save-button_disabled {
-    /* opacity: 0.2; */
     border: 1px solid rgba(0, 0, 0, .2);
     box-sizing: border-box;
     border-radius: 2px;
     color: rgba(0, 0, 0, .2);
-    background-color: red;
+    background-color: #fff;
 }
