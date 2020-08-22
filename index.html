@@ -2,78 +2,85 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="./pages/index.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./pages/index.css">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Yandex Web Project 4">
-  <meta name="keywords" content="Yandex Web Project 4 Around the US">
-  <meta name="author" content="Rachelle Cottle">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yandex Web Project 4">
+    <meta name="keywords" content="Yandex Web Project 4 Around the US">
+    <meta name="author" content="Rachelle Cottle">
 
-  <title>Yandex Web Project 4: Around the US by Rachelle Cottle</title>
+    <title>Yandex Web Project 4: Around the US by Rachelle Cottle</title>
 </head>
 
 <body class="page">
-  <div class="page__container">
-    <header class="header">
-      <img src="./images/logo.svg" alt="Around the US" class="header__logo">
-    </header>
-    <main class="content">
-      <section class="profile">
-        <img src="./images/jc.jpg" alt="Jacques Cousteau" class="profile__avatar">
-        <div class="profile__info-container">
-          <div class="profile__title-container">
-            <h1 class="profile__name">Jacques Cousteau</h1>
-            <button class="profile__edit-button" aria-label="Edit Button" type="button">
+    <div class="page__container">
+        <header class="header">
+            <img src="./images/logo.svg" alt="Around the US" class="header__logo">
+        </header>
+        <main class="content">
+            <section class="profile">
+                <img src="./images/jc.jpg" alt="Jacques Cousteau" class="profile__avatar">
+                <div class="profile__info-container">
+                    <div class="profile__title-container">
+                        <h1 class="profile__name">Jacques Cousteau</h1>
+                        <button class="profile__edit-button" aria-label="Edit Button" type="button">
             </button>
-          </div>
-          <p class="profile__about">Explorer</p>
-        </div>
-        <button class="profile__add-button" aria-label="Add Button" type="button">
+                    </div>
+                    <p class="profile__about">Explorer</p>
+                </div>
+                <button class="profile__add-button" aria-label="Add Button" type="button">
         </button>
-      </section>
-      <section class="elements">
-        <ul class="elements__items">
-        </ul>
-      </section>
-    </main>
-    <footer class="footer">
-      <p class="footer__copyright">© 2020 Around The U.S.</p>
-    </footer>
-  </div>
-  <div class="modal modal_type_edit-profile">
-    <div class="modal__container">
-      <form action="#" class="form form_type_edit-profile" method="post" name="profile">
-        <h3 class="form__title">Edit Profile</h3>
-        <input type="text" class="form__input form__input_type_name" value="" placeholder="Name">
-        <input type="text" class="form__input form__input_type_about" value="" placeholder="About Me">
-        <button type="submit" class="form__save-button">Save</button>
-      </form>
-      <button class="modal__close-button" aria-label="Close Button" type="button"></button>
+            </section>
+            <section class="elements">
+                <ul class="elements__items">
+                </ul>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__copyright">© 2020 Around The U.S.</p>
+        </footer>
     </div>
-  </div>
-  <div class="modal modal_type_add-card">
-    <div class="modal__container">
-      <form action="#" class="form form_type_add-card" method="post" name="add card">
-        <h3 class="form__title">New Place</h3>
-        <input type="text" class="form__input form__input_type_card-title" value="" placeholder="Title">
-        <input type="text" class="form__input form__input_type_url" value="" placeholder="Image link">
-        <button type="submit" class="form__save-button">Save</button>
-      </form>
-      <button class="modal__close-button" aria-label="Close Button" type="button"></button>
+    <div class="modal modal_type_edit-profile">
+        <div class="modal__container">
+            <form action="#" class="form form_type_edit-profile" method="post" name="profile">
+                <h3 class="form__title">Edit Profile</h3>
+                <input id="profile-name" type="text" class="form__input form__input_type_name" value="" placeholder="Name" required maxlength="40" minlength="2">
+                <span id="profile-name-error" class="form__error"></span>
+
+                <input id="profile-description" type="text" class="form__input form__input_type_about" value="" placeholder="About Me" required maxlength="200" minlength="2">
+                <span id="profile-description-error" class="form__error"></span>
+
+                <button type="submit" class="modal__save-button">Save</button>
+            </form>
+            <button class="modal__close-button" aria-label="Close Button" type="button"></button>
+        </div>
     </div>
-  </div>
-  <div class="modal modal_type_image">
-    <div class="modal__container modal__container_type_image">
-      <button class="modal__close-button modal__close-button_type_image" aria-label="Close Button"
-        type="button"></button>
-      <figure class="modal__figure">
-        <img src="" alt="" class="modal__image">
-        <figcaption class="modal__image-title"></figcaption>
-      </figure>
+    <div class="modal modal_type_add-card">
+        <div class="modal__container">
+            <form action="#" class="form form_type_add-card" method="post" name="add card">
+                <h3 class="form__title">New Place</h3>
+                <input id="card-title" type="text" class="form__input form__input_type_card-title" value="" placeholder="Title" required maxlength="30" minlength="2">
+                <span id="card-title-error" class="form__error"></span>
+
+                <input type="url" id="card-url" class="form__input form__input_type_url" value="" placeholder="Image link" required>
+                <span id="card-url-error" class="form__error"></span>
+
+                <button type="submit" class="modal__save-button">Save</button>
+            </form>
+            <button class="modal__close-button" aria-label="Close Button" type="button"></button>
+        </div>
     </div>
-  </div>
-  <template class="card-template">
+    <div class="modal modal_type_image">
+        <div class="modal__container modal__container_type_image">
+            <button class="modal__close-button modal__close-button_type_image" aria-label="Close Button" type="button"></button>
+            <figure class="modal__figure">
+                <img src="" alt="" class="modal__image">
+                <figcaption class="modal__image-title"></figcaption>
+            </figure>
+        </div>
+    </div>
+    <template class="card-template">
     <li class="elements__item">
       <button class="elements__delete-button" aria-label="Delete Button" type="button"></button>
       <div style="" class="elements__image"></div>
@@ -83,7 +90,8 @@
       </div>
     </li>
   </template>
-  <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
 </body>
 
 </html>
