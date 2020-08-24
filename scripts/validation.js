@@ -18,7 +18,6 @@ function hideErrorMessage(input, form, { errorClass, inputErrorClass, ...rest })
 
 }
 
-
 function checkInputValidity(input, form, rest) {
     if (input.validity.valid) {
         hideErrorMessage(input, form, rest)
@@ -41,8 +40,8 @@ function enableValidation({ formSelector, inputSelector, submitButtonSelector, .
     const forms = [...document.querySelectorAll(formSelector)];
 
     forms.forEach((form) => {
-        form.addEventListener('submit', ((e) => {
-            e.preventDefault()
+        form.addEventListener('submit', ((evt) => {
+            evt.preventDefault()
 
         }))
 
