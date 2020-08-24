@@ -68,12 +68,3 @@ enableValidation({
     inputErrorClass: "form__input_type_error",
     errorClass: "form__error_visible"
 });
-
-// function closeModal
-
-// $(document).click(function(event) {
-//     //if you click on anything except the modal itself or the "open modal" link, close the modal
-//     if (!$(event.target).closest(".modal,.js-open-modal").length) {
-//         $("body").find(".modal").removeClass("modal_opened");
-//     }
-// });
