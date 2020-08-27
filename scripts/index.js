@@ -85,8 +85,8 @@ function createCard(title, imageLink) {
     });
 
     cardDeleteButton.addEventListener("click", () => {
-        const list = cardDeleteButton.closest(".elements__item");
-        list.remove();
+        const listItem = cardDeleteButton.closest(".elements__item");
+        listItem.remove();
     });
 
     cardImage.addEventListener("click", () => {
