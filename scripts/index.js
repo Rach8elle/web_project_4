@@ -3,22 +3,21 @@
 //wrappers
 const formEditProfile = document.querySelector(".form_type_edit-profile");
 const formAddCard = document.querySelector(".form_type_add-card");
-const addCardModalWindow = document.querySelector(".modal_type_add-card");
-const editProfileModalWindow = document.querySelector(".modal_type_edit-profile");
-const imageModalWindow = document.querySelector(".modal_type_image");
-const modalImage = imageModalWindow.querySelector(".modal__image");
-const modalImageTitle = imageModalWindow.querySelector(".modal__image-title");
+const modalAddCard = document.querySelector(".modal_type_add-card");
+const modalEditProfile = document.querySelector(".modal_type_edit-profile");
+const modalImageWindow = document.querySelector(".modal_type_image");
+const modalImageBig = modalImageWindow.querySelector(".modal__image");
+const modalImageBigTitle = modalImageWindow.querySelector(".modal__image-title");
 const list = document.querySelector(".elements__items");
-const modal = document.querySelector(".modal");
 
 //openButtons
-const editModalButton = document.querySelector(".profile__edit-button");
-const addCardModalButton = document.querySelector(".profile__add-button");
+const editProfileModalButton = document.querySelector(".profile__edit-button");
+const openModalAddCardButton = document.querySelector(".profile__add-button");
 
 //closeButtons
-const closeAddCardModalButton = addCardModalWindow.querySelector(".modal__close-button");
-const closeProfileModalButton = editProfileModalWindow.querySelector(".modal__close-button");
-const closeImageModalButton = imageModalWindow.querySelector(".modal__close-button");
+const closeModalAddCardButton = modalAddCard.querySelector(".modal__close-button");
+const closeProfileModalButton = modalEditProfile.querySelector(".modal__close-button");
+const closeModalImageWindowButton = modalImageWindow.querySelector(".modal__close-button");
 
 //profileSection
 const profileName = document.querySelector(".profile__name");
@@ -32,7 +31,6 @@ const cardTitleInput = document.querySelector(".form__input_type_card-title");
 
 //cards
 const cardTemplate = document.querySelector(".card-template").content.querySelector(".elements__item");
-
 const initialCards = [{
         name: "Yosemite Valley",
         link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
@@ -59,47 +57,12 @@ const initialCards = [{
     },
 ];
 
-
-
-//FUNCTIONS
-
-//to open and close modals  and also to close with window click
-function toggleModalWindow(modal) {
-    modal.classList.toggle("modal_opened");
-    closeWindowOnClick(modal);
-    closeWithEscape(modal);
-};
-
-
-// to close modal with window click
-function closeWindowOnClick(modal) {
-    const openModal = document.querySelector('.modal_opened');
-    const modalIsOpen = modal.classList.contains('modal_opened');
-    window.onclick = function(evt) {
-        if (evt.target === openModal && modalIsOpen) {
-            toggleModalWindow(modal);
-        }
-    };
-}
-
-//to close modals with escape key
-function closeWithEscape(modal) {
-    window.addEventListener('keydown', function(event) {
-        const modalIsOpen = modal.classList.contains('modal_opened');
-        if (event.key === 'Escape' &&
-            modalIsOpen) {
-            toggleModalWindow(modal);
-        }
-    })
-}
-
-
-//submits edit profile window profile edit modal
-function handleFormSubmit(evt) {
+//prevents browser default
+function editFormSubmitHandler(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileAbout.textContent = aboutInput.value;
-    toggleModalWindow(editProfileModalWindow);
+    toggleModal(modalEditProfile);
 }
 
 //creates the cards with their buttons images and titles and close buttons and like button
@@ -116,6 +79,7 @@ function createCard(title, imageLink) {
     cardImage.style.backgroundImage = `url(${imageLink})`;
     cardImage.setAttribute("alt", title);
 
+    // transform 3 event listeners to the only one
     cardLikeButton.addEventListener("click", function(evt) {
         evt.target.classList.toggle("elements__like-button_active");
     });
@@ -126,55 +90,80 @@ function createCard(title, imageLink) {
     });
 
     cardImage.addEventListener("click", () => {
-        modalImage.src = imageLink;
-        modalImage.setAttribute("alt", title);
-        modalImageTitle.textContent = title;
-        toggleModalWindow(imageModalWindow);
+        modalImageBig.src = imageLink;
+        modalImageBig.setAttribute("alt", title);
+        modalImageBigTitle.textContent = title;
+        toggleModal(modalImageWindow);
     });
 
     return cardElement;
 }
 
-//event listeners
-
 //submits and closes edit profile window
-formEditProfile.addEventListener("submit", handleFormSubmit);
-editModalButton.addEventListener("click", () => {
-    if (!editProfileModalWindow.classList.contains("modal_opened")) {
-        nameInput.value = profileName.textContent;
-        aboutInput.value = profileAbout.textContent;
-    }
-    toggleModalWindow(editProfileModalWindow);
-});
-//closes profile modal window
-closeProfileModalButton.addEventListener("click", () => {
-    toggleModalWindow(editProfileModalWindow);
-});
-
-//opens the window to  add a new card
-addCardModalButton.addEventListener("click", () => {
-    toggleModalWindow(addCardModalWindow);
-});
-
-//closes the window that adds a card
-closeAddCardModalButton.addEventListener("click", () => {
-    toggleModalWindow(addCardModalWindow);
-});
-
-//closes the enlarged image when user clicks close button
-closeImageModalButton.addEventListener("click", () => {
-    toggleModalWindow(imageModalWindow);
-});
-
+formEditProfile.addEventListener("submit", editFormSubmitHandler);
 
 //form to add card at the beginning when user inputs title and link
 formAddCard.addEventListener("submit", (evt) => {
     evt.preventDefault();
     list.prepend(createCard(cardTitleInput.value, cardImageLinkInput.value));
-    toggleModalWindow(addCardModalWindow);
+    toggleModal(modalAddCard);
 });
 
 //creates initial gallery of cards
 initialCards.forEach((data) => {
     list.prepend(createCard(data.name, data.link));
+});
+
+// modal
+let activeModal = null;
+
+//function to close with escape button
+const closeWithEsc = ({ keyCode }) => {
+    if (keyCode === 27) {
+        toggleModal(activeModal);
+    }
+};
+
+//function to close modal on click anywhere
+const closeWithModalClick = ({ target }) => {
+    if (target.classList.contains('modal__close-button') ||
+        target.classList.contains('modal')) {
+        toggleModal(activeModal);
+    }
+};
+
+//function to check to see if modal is open and close with esc and click if it is
+const toggleModal = modal => {
+    const isModalOpened = modal.classList.contains('modal_opened');
+
+    activeModal = modal;
+    modal.classList.toggle('modal_opened');
+
+    if (isModalOpened) {
+        document.removeEventListener('keydown', closeWithEsc);
+        modal.removeEventListener('click', closeWithModalClick);
+        activeModal = null;
+    } else {
+        document.addEventListener('keydown', closeWithEsc);
+        modal.addEventListener('click', closeWithModalClick);
+    }
+};
+//function to open edit profile modal this WORKS KEEP IT
+// editProfileModalButton.addEventListener('click', () => {
+//     toggleModal(modalEditProfile);
+// });
+
+//function to open add a new card modal
+openModalAddCardButton.addEventListener('click', () => {
+    toggleModal(modalAddCard);
+});
+
+//submits and closes edit profile window
+formEditProfile.addEventListener("submit", editFormSubmitHandler);
+editProfileModalButton.addEventListener("click", () => {
+    if (!modalEditProfile.classList.contains("modal_opened")) {
+        nameInput.value = profileName.textContent;
+        aboutInput.value = profileAbout.textContent;
+    }
+    toggleModal(modalEditProfile);
 });
