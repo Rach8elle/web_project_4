@@ -117,12 +117,14 @@ initialCards.forEach((data) => {
 // modal
 let activeModal = null;
 
+//function to close with escape button
 const closeWithEsc = ({ keyCode }) => {
     if (keyCode === 27) {
         toggleModal(activeModal);
     }
 };
 
+//function to close modal on click anywhere
 const closeWithModalClick = ({ target }) => {
     if (target.classList.contains('modal__close-button') ||
         target.classList.contains('modal')) {
@@ -130,6 +132,7 @@ const closeWithModalClick = ({ target }) => {
     }
 };
 
+//function to check to see if modal is open and close with esc and click if it is
 const toggleModal = modal => {
     const isModalOpened = modal.classList.contains('modal_opened');
 
@@ -145,11 +148,22 @@ const toggleModal = modal => {
         modal.addEventListener('click', closeWithModalClick);
     }
 };
+//function to open edit profile modal this WORKS KEEP IT
+// editProfileModalButton.addEventListener('click', () => {
+//     toggleModal(modalEditProfile);
+// });
 
-editProfileModalButton.addEventListener('click', () => {
-    toggleModal(modalEditProfile);
-});
-
+//function to open add a new card modal
 openModalAddCardButton.addEventListener('click', () => {
     toggleModal(modalAddCard);
+});
+
+//submits and closes edit profile window
+formEditProfile.addEventListener("submit", editFormSubmitHandler);
+editProfileModalButton.addEventListener("click", () => {
+    if (!modalEditProfile.classList.contains("modal_opened")) {
+        nameInput.value = profileName.textContent;
+        aboutInput.value = profileAbout.textContent;
+    }
+    toggleModal(modalEditProfile);
 });
