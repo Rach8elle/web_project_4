@@ -148,10 +148,6 @@ const toggleModal = modal => {
         modal.addEventListener('click', closeWithModalClick);
     }
 };
-//function to open edit profile modal this WORKS KEEP IT
-// editProfileModalButton.addEventListener('click', () => {
-//     toggleModal(modalEditProfile);
-// });
 
 //function to open add a new card modal
 openModalAddCardButton.addEventListener('click', () => {
