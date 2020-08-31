@@ -10,14 +10,11 @@ const modalImageBig = modalImageWindow.querySelector(".modal__image");
 const modalImageBigTitle = modalImageWindow.querySelector(".modal__image-title");
 const list = document.querySelector(".elements__items");
 
+
 //openButtons
 const editProfileModalButton = document.querySelector(".profile__edit-button");
 const openModalAddCardButton = document.querySelector(".profile__add-button");
 
-//closeButtons
-const closeModalAddCardButton = modalAddCard.querySelector(".modal__close-button");
-const closeProfileModalButton = modalEditProfile.querySelector(".modal__close-button");
-const closeModalImageWindowButton = modalImageWindow.querySelector(".modal__close-button");
 
 //profileSection
 const profileName = document.querySelector(".profile__name");
@@ -57,16 +54,11 @@ const initialCards = [{
     },
 ];
 
-//prevents browser default
-function editFormSubmitHandler(evt) {
-    evt.preventDefault();
-    profileName.textContent = nameInput.value;
-    profileAbout.textContent = aboutInput.value;
-    toggleModal(modalEditProfile);
-}
+
 
 //creates the cards with their buttons images and titles and close buttons and like button
 function createCard(title, imageLink) {
+
     const cardElement = cardTemplate.cloneNode(true);
     const cardImage = cardElement.querySelector(".elements__image");
     const cardTitle = cardElement.querySelector(".elements__title");
@@ -77,9 +69,9 @@ function createCard(title, imageLink) {
 
     cardTitle.textContent = title;
     cardImage.style.backgroundImage = `url(${imageLink})`;
-    cardImage.setAttribute("alt", title);
 
-    // transform 3 event listeners to the only one
+
+    // transform 3 event listeners to only one
     cardLikeButton.addEventListener("click", function(evt) {
         evt.target.classList.toggle("elements__like-button_active");
     });
@@ -115,6 +107,7 @@ initialCards.forEach((data) => {
 });
 
 // modal
+
 let activeModal = null;
 
 //function to close with escape button
@@ -163,3 +156,11 @@ editProfileModalButton.addEventListener("click", () => {
     }
     toggleModal(modalEditProfile);
 });
+
+//prevents browser default
+function editFormSubmitHandler(evt) {
+    evt.preventDefault();
+    profileName.textContent = nameInput.value;
+    profileAbout.textContent = aboutInput.value;
+    toggleModal(modalEditProfile);
+}
