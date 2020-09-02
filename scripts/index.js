@@ -72,8 +72,8 @@ function createCard(title, imageLink) {
 
 
     // transform 3 event listeners to only one
-    cardLikeButton.addEventListener("click", function(evt) {
-        evt.target.classList.toggle("elements__like-button_active");
+    cardLikeButton.addEventListener("click", () => {
+        cardLikeButton.classList.toggle("elements__like-button_active");
     });
 
     cardDeleteButton.addEventListener("click", () => {
@@ -83,7 +83,7 @@ function createCard(title, imageLink) {
 
     cardImage.addEventListener("click", () => {
         modalImageBig.src = imageLink;
-        modalImageBig.setAttribute("alt", title);
+        modalImageBig.alt = title;
         modalImageBigTitle.textContent = title;
         toggleModal(modalImageWindow);
     });
@@ -91,8 +91,7 @@ function createCard(title, imageLink) {
     return cardElement;
 }
 
-//submits and closes edit profile window
-formEditProfile.addEventListener("submit", editFormSubmitHandler);
+
 
 //form to add card at the beginning when user inputs title and link
 formAddCard.addEventListener("submit", (evt) => {
@@ -108,41 +107,44 @@ initialCards.forEach((data) => {
 
 // modal
 
-let activeModal = null;
+//close modal with escape button
+const ESC_KEY = 27;
 
-//function to close with escape button
 const closeWithEsc = ({ keyCode }) => {
-    if (keyCode === 27) {
-        toggleModal(activeModal);
+    if (keyCode === ESC_KEY) {
+        const targetModal = document.querySelector('.modal_opened');
+        toggleModal(targetModal);
     }
-};
+}
 
-//function to close modal on click anywhere
-const closeWithModalClick = ({ target }) => {
+
+//close modal on click on overlay
+const closeWithClick = ({ target }) => {
     if (target.classList.contains('modal__close-button') ||
         target.classList.contains('modal')) {
-        toggleModal(activeModal);
+        const targetModal = document.querySelector('.modal_opened');
+        toggleModal(targetModal);
     }
 };
 
-//function to check to see if modal is open and close with esc and click if it is
+//Close modal if open
 const toggleModal = modal => {
     const isModalOpened = modal.classList.contains('modal_opened');
 
-    activeModal = modal;
+
     modal.classList.toggle('modal_opened');
 
     if (isModalOpened) {
         document.removeEventListener('keydown', closeWithEsc);
-        modal.removeEventListener('click', closeWithModalClick);
-        activeModal = null;
+        modal.removeEventListener('click', closeWithClick);
+
     } else {
         document.addEventListener('keydown', closeWithEsc);
-        modal.addEventListener('click', closeWithModalClick);
+        modal.addEventListener('click', closeWithClick);
     }
 };
 
-//function to open add a new card modal
+//function to open add-new-card modal
 openModalAddCardButton.addEventListener('click', () => {
     toggleModal(modalAddCard);
 });
@@ -157,7 +159,7 @@ editProfileModalButton.addEventListener("click", () => {
     toggleModal(modalEditProfile);
 });
 
-//prevents browser default
+
 function editFormSubmitHandler(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
