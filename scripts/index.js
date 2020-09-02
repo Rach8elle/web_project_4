@@ -112,8 +112,8 @@ const ESC_KEY = 27;
 
 const closeWithEsc = ({ keyCode }) => {
     if (keyCode === ESC_KEY) {
-        const targetModal = document.querySelector('.modal_opened');
-        toggleModal(targetModal);
+        const activeModal = document.querySelector('.modal_opened');
+        toggleModal(activeModal);
     }
 }
 
@@ -122,8 +122,8 @@ const closeWithEsc = ({ keyCode }) => {
 const closeWithClick = ({ target }) => {
     if (target.classList.contains('modal__close-button') ||
         target.classList.contains('modal')) {
-        const targetModal = document.querySelector('.modal_opened');
-        toggleModal(targetModal);
+        const activeModal = document.querySelector('.modal_opened');
+        toggleModal(activeModal);
     }
 };
 
