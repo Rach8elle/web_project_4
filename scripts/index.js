@@ -58,6 +58,8 @@ const initialCards = [{
 
 //creates the cards with their buttons images and titles and close buttons and like button
 function createCard(title, imageLink) {
+    let element = document.getElementById('add-card');
+    element.classList.remove('modal_type_add-card');
 
     const cardElement = cardTemplate.cloneNode(true);
     const cardImage = cardElement.querySelector(".elements__image");
