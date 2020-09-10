@@ -58,6 +58,7 @@ const initialCards = [{
 
 //creates the cards with their buttons images and titles and close buttons and like button
 function createCard(title, imageLink) {
+    //eliminates the add card modal opening on page load
     let element = document.getElementById('add-card');
     element.classList.remove('modal_type_add-card');
 
