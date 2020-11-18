@@ -1,10 +1,31 @@
+import FormValidator from './FormValidator.js';
+
+const defaultConfig = {
+    formSelector: ".form",
+    inputSelector: ".form__input",
+    submitButtonSelector: ".modal__save-button",
+    inactiveButtonClass: "modal__save-button_disabled",
+    inputErrorClass: "form__input_type_error",
+    errorClass: "form__error_visible"
+};
+
+
+const modalEditProfile = document.querySelector(".modal_type_edit-profile");
+const modalAddCard = document.querySelector(".modal_type_add-card");
+
+const formEditProfile = modalEditProfile.querySelector(".form");
+const formAddCard = modalAddCard.querySelector(".form");
+
+
+const editFormValidator = new FormValidator(defaultConfig, formEditProfile);
+const addFormValidator = new FormValidator(defaultConfig, formAddCard);
+
+editFormValidator.enableValidation()
+addFormValidator.enableValidation()
+
 //DECLARING VARIABLES
 
 //wrappers
-const formEditProfile = document.querySelector(".form_type_edit-profile");
-const formAddCard = document.querySelector(".form_type_add-card");
-const modalAddCard = document.querySelector(".modal_type_add-card");
-const modalEditProfile = document.querySelector(".modal_type_edit-profile");
 const modalImageWindow = document.querySelector(".modal_type_image");
 const modalImageBig = modalImageWindow.querySelector(".modal__image");
 const modalImageBigTitle = modalImageWindow.querySelector(".modal__image-title");
@@ -58,6 +79,9 @@ const initialCards = [{
 
 //creates the cards with their buttons images and titles and close buttons and like button
 function createCard(title, imageLink) {
+    //eliminates the add card modal opening on page load
+    let element = document.getElementById('add-card');
+    element.classList.remove('modal_type_add-card');
 
     const cardElement = cardTemplate.cloneNode(true);
     const cardImage = cardElement.querySelector(".elements__image");
