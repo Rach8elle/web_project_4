@@ -11,9 +11,9 @@ class FormValidator {
 
 
 
-    _showErrorMessage(inputElement, validationMessage) {
-        const error = this._form.querySelector('#' + inputElement.id + '-error');
-        inputElement.classList.add(this._inputErrorClass);
+    _showErrorMessage(input, validationMessage) {
+        const error = this._form.querySelector('#' + input.id + '-error');
+        input.classList.add(this._inputErrorClass);
         error.textContent = input.validationMessage;
         error.classList.add(this._errorClass);
     }
@@ -21,18 +21,18 @@ class FormValidator {
 
 
 
-    _hideErrorMessage(inputElement) {
-        const error = this._form.querySelector('#' + inputElement.id + '-error');
-        inputElement.classList.remove(this._inputErrorClass);
+    _hideErrorMessage(input) {
+        const error = this._form.querySelector('#' + input.id + '-error');
+        input.classList.remove(this._inputErrorClass);
         error.textContent = '';
         error.classList.remove(this._errorClass);
     }
 
-    _checkInputValidity(inputElement) {
-        if (inputElement.validity.valid) {
-            _hideErrorMessage(inputElement, this._form, rest)
+    _checkInputValidity(input) {
+        if (input.validity.valid) {
+            _hideErrorMessage(input, this._form)
         } else {
-            _showErrorMessage(inputElement, this._form, rest)
+            _showErrorMessage(input, this._form)
         }
 
     }
@@ -49,12 +49,12 @@ class FormValidator {
     }
 
     _setEventListeners() {
-        const inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
+        const inputs = Array.from(this._form.querySelectorAll(this._inputSelector));
 
         const button = this._form.querySelector(this._submitButtonSelector);
 
-        inputList.forEach((inputElement) => {
-            inputElement.addEventListener('input', () => {
+        inputs.forEach((input) => {
+            input.addEventListener('input', () => {
                 this._checkInputValidity();
                 this._toggleButtonState();
             });

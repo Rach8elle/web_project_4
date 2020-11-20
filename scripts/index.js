@@ -1,4 +1,5 @@
 import FormValidator from './FormValidator.js';
+import Card from './Card.js';
 
 const defaultConfig = {
     formSelector: ".form",
@@ -48,7 +49,7 @@ const cardImageLinkInput = document.querySelector(".form__input_type_url");
 const cardTitleInput = document.querySelector(".form__input_type_card-title");
 
 //cards
-const cardTemplate = document.querySelector(".card-template").content.querySelector(".elements__item");
+const cardTemplate = document.querySelector("#card-template").content.querySelector(".elements__item");
 const initialCards = [{
         name: "Yosemite Valley",
         link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
@@ -79,10 +80,6 @@ const initialCards = [{
 
 //creates the cards with their buttons images and titles and close buttons and like button
 function createCard(title, imageLink) {
-    //eliminates the add card modal opening on page load
-    let element = document.getElementById('add-card');
-    element.classList.remove('modal_type_add-card');
-
     const cardElement = cardTemplate.cloneNode(true);
     const cardImage = cardElement.querySelector(".elements__image");
     const cardTitle = cardElement.querySelector(".elements__title");
@@ -126,8 +123,14 @@ formAddCard.addEventListener("submit", (evt) => {
 
 //creates initial gallery of cards
 initialCards.forEach((data) => {
-    list.prepend(createCard(data.name, data.link));
+    // const card = new Card(data, '#card-template');
+    // list.prepend(card.generateCard());
+    initialCards.forEach((data) => {
+        list.prepend(createCard(data.name, data.link));
+    });
 });
+
+
 
 // modal
 
