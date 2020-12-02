@@ -81,16 +81,16 @@ class Card {
     }
 
 
-    generatecard() {
+    generateCard() {
 
-        this._card = this.__getCardTemplate().cloneNode(true);
+        this._card = this._getCardTemplate().cloneNode(true);
         const cardImage = this._card.querySelector(".elements__image");
 
 
         this._card.querySelector('.elements__title').textContent = this._name;
         cardImage.style.backgroundImage = `url(${this._link})`;
 
-        this.__setEventListeners();
+        this._setEventListeners();
 
         return this._card;
     }

@@ -123,11 +123,10 @@ formAddCard.addEventListener("submit", (evt) => {
 
 //creates initial gallery of cards
 initialCards.forEach((data) => {
-    // const card = new Card(data, '#card-template');
-    // list.prepend(card.generateCard());
-    initialCards.forEach((data) => {
-        list.prepend(createCard(data.name, data.link));
-    });
+
+    const card = new Card(data, '#card-template');
+    list.prepend(card.generateCard());
+
 });
 
 
