@@ -80,6 +80,7 @@ const initialCards = [{
 
 //creates the cards with their buttons images and titles and close buttons and like button
 function createCard(title, imageLink) {
+
     const cardElement = cardTemplate.cloneNode(true);
     const cardImage = cardElement.querySelector(".elements__image");
     const cardTitle = cardElement.querySelector(".elements__title");
