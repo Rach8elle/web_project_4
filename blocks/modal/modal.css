@@ -6,7 +6,6 @@
 @import url('./__figure/modal__figure.css');
 @import url('./__save-button/modal__save-button.css');
 @import url('./__save-button/_disabled/modal__save-button_disabled.css');
-@import url('./_type/modal_type_add-card.css');
 .modal {
     background-color: rgba(0, 0, 0, .7);
     width: 100%;
