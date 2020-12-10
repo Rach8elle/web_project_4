@@ -55,39 +55,39 @@ const cardTitleInput = document.querySelector(".form__input_type_card-title");
 
 
 //creates the cards with their buttons images and titles and close buttons and like button
-function createCard(title, imageLink) {
+// function createCard(title, imageLink) {
 
-    const cardElement = cardTemplate.cloneNode(true);
-    const cardImage = cardElement.querySelector(".elements__image");
-    const cardTitle = cardElement.querySelector(".elements__title");
-    const cardDeleteButton = cardElement.querySelector(
-        ".elements__delete-button"
-    );
-    const cardLikeButton = cardElement.querySelector(".elements__like-button");
+//     const cardElement = cardTemplate.cloneNode(true);
+//     const cardImage = cardElement.querySelector(".elements__image");
+//     const cardTitle = cardElement.querySelector(".elements__title");
+//     const cardDeleteButton = cardElement.querySelector(
+//         ".elements__delete-button"
+//     );
+//     const cardLikeButton = cardElement.querySelector(".elements__like-button");
 
-    cardTitle.textContent = title;
-    cardImage.style.backgroundImage = `url(${imageLink})`;
+//     cardTitle.textContent = title;
+//     cardImage.style.backgroundImage = `url(${imageLink})`;
 
 
-    // transform 3 event listeners to only one
-    cardLikeButton.addEventListener("click", () => {
-        cardLikeButton.classList.toggle("elements__like-button_active");
-    });
+//     // transform 3 event listeners to only one
+//     cardLikeButton.addEventListener("click", () => {
+//         cardLikeButton.classList.toggle("elements__like-button_active");
+//     });
 
-    cardDeleteButton.addEventListener("click", () => {
-        const listItem = cardDeleteButton.closest(".elements__item");
-        listItem.remove();
-    });
+//     cardDeleteButton.addEventListener("click", () => {
+//         const listItem = cardDeleteButton.closest(".elements__item");
+//         listItem.remove();
+//     });
 
-    cardImage.addEventListener("click", () => {
-        modalImageBig.src = imageLink;
-        modalImageBig.alt = title;
-        modalImageBigTitle.textContent = title;
-        toggleModal(modalImageWindow);
-    });
+//     cardImage.addEventListener("click", () => {
+//         modalImageBig.src = imageLink;
+//         modalImageBig.alt = title;
+//         modalImageBigTitle.textContent = title;
+//         toggleModal(modalImageWindow);
+//     });
 
-    return cardElement;
-}
+//     return cardElement;
+// }
 
 
 
