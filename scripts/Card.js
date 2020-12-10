@@ -15,6 +15,7 @@ class Card {
 
     }
 
+
     _setEventListeners() {
         const cardImage = this._card.querySelector(".elements__image");
         const cardDeleteButton = this._card.querySelector(
