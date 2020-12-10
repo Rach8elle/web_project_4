@@ -94,7 +94,8 @@ const cardTitleInput = document.querySelector(".form__input_type_card-title");
 //form to add card at the beginning when user inputs title and link
 formAddCard.addEventListener("submit", (evt) => {
     evt.preventDefault();
-    list.prepend(createCard(cardTitleInput.value, cardImageLinkInput.value));
+    const createCard = new Card({ name: cardTitleInput.value, link: cardImageLinkInput.value }, '#card-template')
+    list.prepend(createCard.generateCard());
     toggleModal(modalAddCard);
 });
 
