@@ -1,40 +1,4 @@
-//close modal with escape button
-const ESC_KEY = 27;
-
-const closeWithEsc = ({ keyCode }) => {
-    if (keyCode === ESC_KEY) {
-        const activeModal = document.querySelector('.modal_opened');
-        toggleModal(activeModal);
-    }
-}
-
-
-//close modal on click on overlay
-const closeWithClick = ({ target }) => {
-    if (target.classList.contains('modal__close-button') ||
-        target.classList.contains('modal')) {
-        const activeModal = document.querySelector('.modal_opened');
-        toggleModal(activeModal);
-    }
-};
-
-//Close modal if open
-const toggleModal = modal => {
-    const isModalOpened = modal.classList.contains('modal_opened');
-
-
-    modal.classList.toggle('modal_opened');
-
-    if (isModalOpened) {
-        document.removeEventListener('keydown', closeWithEsc);
-        modal.removeEventListener('click', closeWithClick);
-
-    } else {
-        document.addEventListener('keydown', closeWithEsc);
-        modal.addEventListener('click', closeWithClick);
-    }
-};
-
+import toggleModal from './utils.js'
 
 class Card {
     constructor(data, templateSelector) {
@@ -44,11 +8,13 @@ class Card {
 
     }
 
-    _getCardTemplate() {
+    _getNewCardTemplate() {
         const cardTemplate = document.querySelector(this._templateSelector).content.querySelector(".elements__item");
 
         return cardTemplate;
+
     }
+
 
     _setEventListeners() {
         const cardImage = this._card.querySelector(".elements__image");
@@ -83,7 +49,7 @@ class Card {
 
     generateCard() {
 
-        this._card = this._getCardTemplate().cloneNode(true);
+        this._card = this._getNewCardTemplate().cloneNode(true);
         const cardImage = this._card.querySelector(".elements__image");
 
 
