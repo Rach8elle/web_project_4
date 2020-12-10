@@ -1,5 +1,3 @@
-// import {open} from './utils.js';
-
 //close modal with escape button
 const ESC_KEY = 27;
 
@@ -38,10 +36,6 @@ const toggleModal = modal => {
 };
 
 
-const modalImageWindow = document.querySelector(".modal_type_image");
-const modalImageBig = modalImageWindow.querySelector(".modal__image");
-const modalImageBigTitle = modalImageWindow.querySelector(".modal__image-title");
-
 class Card {
     constructor(data, templateSelector) {
         this._link = data.link;
@@ -50,72 +44,37 @@ class Card {
 
     }
 
-    _handleLike(evt) {
-        evt.target.classList.toggle('elements__like-button_active');
+    _getCardTemplate() {
+        const cardTemplate = document.querySelector(this._templateSelector).content.querySelector(".elements__item");
 
+        return cardTemplate;
     }
-
-    _handleDelete(evt) {
-        evt.target.closest(".elements__item").remove();
-
-    }
-
-    _handlePicPrev(evt) {
-        modalImageBig.src = this._link;
-        modalImageBig.alt = this._name;
-        modalImageBigTitle.textContent = this._name;
-        toggleModal(modalImageWindow);
-
-    }
-
-
-
-
 
     _setEventListeners() {
-        // const cardImage = this._card.querySelector(".elements__image");
-        // const cardDeleteButton = this._card.querySelector(
-        //     ".elements__delete-button"
-        // );
-        // const cardLikeButton = this._card.querySelector(".elements__like-button");
-
-
-        // cardLikeButton.addEventListener("click", () => {
-        //     cardLikeButton.classList.toggle("elements__like-button_active");
-        // });
-
-        // cardDeleteButton.addEventListener("click", () => {
-        //     const listItem = cardDeleteButton.closest(".elements__item");
-        //     listItem.remove();
-        // });
-
-        // cardImage.addEventListener("click", () => {
-        //     const modalImageWindow = document.querySelector(".modal_type_image");
-        //     const modalImageBig = modalImageWindow.querySelector(".modal__image");
-        //     const modalImageBigTitle = modalImageWindow.querySelector(".modal__image-title");
-        //     modalImageBig.src = this._link;
-        //     modalImageBig.alt = this._name;
-        //     modalImageBigTitle.textContent = this._name;
-        //     toggleModal(modalImageWindow);
-        // });
-        this._cardElement
+        const cardImage = this._card.querySelector(".elements__image");
         const cardDeleteButton = this._card.querySelector(
             ".elements__delete-button"
         );
         const cardLikeButton = this._card.querySelector(".elements__like-button");
-        const cardImage = this._cardElement.querySelector(".elements__image");
 
-        cardLikeButton.addEventListener('click', (evt) => {
-            this._handleLike(evt)
+
+        cardLikeButton.addEventListener("click", () => {
+            cardLikeButton.classList.toggle("elements__like-button_active");
         });
 
-        cardDeleteButton.addEventListener('click', (evt) => {
-            this._handleDelete(evt)
+        cardDeleteButton.addEventListener("click", () => {
+            const listItem = cardDeleteButton.closest(".elements__item");
+            listItem.remove();
         });
 
-        cardImage.addEventListener('click', () => {
-            this._handlePicPrev(data);
-
+        cardImage.addEventListener("click", () => {
+            const modalImageWindow = document.querySelector(".modal_type_image");
+            const modalImageBig = modalImageWindow.querySelector(".modal__image");
+            const modalImageBigTitle = modalImageWindow.querySelector(".modal__image-title");
+            modalImageBig.src = this._link;
+            modalImageBig.alt = this._name;
+            modalImageBigTitle.textContent = this._name;
+            toggleModal(modalImageWindow);
         });
 
 
@@ -123,29 +82,18 @@ class Card {
 
 
     generateCard() {
-        const cardTemplate = document.querySelector(this._templateSelector).content.querySelector(".elements__item");
-        this._cardElement = cardTemplate.cloneNode(true);
-        const cardImage = this._cardElement.querySelector(".elements__image");
 
+        this._card = this._getCardTemplate().cloneNode(true);
+        const cardImage = this._card.querySelector(".elements__image");
+
+
+        this._card.querySelector('.elements__title').textContent = this._name;
         cardImage.style.backgroundImage = `url(${this._link})`;
-        this._cardElement.querySelector('.elements__title').textContent = this._name;
 
-        return cardElement;
+        this._setEventListeners();
+
+        return this._card;
     }
-
-    // generateCard() {
-
-    //     this._card = this._getCardTemplate().cloneNode(true);
-    //     const cardImage = this._card.querySelector(".elements__image");
-
-
-    //     this._card.querySelector('.elements__title').textContent = this._name;
-    //     cardImage.style.backgroundImage = `url(${this._link})`;
-
-    //     this._setEventListeners();
-
-    //     return this._card;
-    // }
 }
 
 export default Card;
