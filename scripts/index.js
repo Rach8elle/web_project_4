@@ -1,6 +1,7 @@
 import FormValidator from './FormValidator.js';
 import Card from './Card.js';
 import initialCards from "./initialCards.js"
+import toggleModal from './utils.js'
 
 const defaultConfig = {
     formSelector: ".form",
@@ -11,7 +12,6 @@ const defaultConfig = {
     errorClass: "form__error_visible"
 };
 
-const cardTemplate = document.querySelector("#card-template").content.querySelector(".elements__item");
 const modalEditProfile = document.querySelector(".modal_type_edit-profile");
 const modalAddCard = document.querySelector(".modal_type_add-card");
 
@@ -52,46 +52,7 @@ const cardTitleInput = document.querySelector(".form__input_type_card-title");
 //cards
 
 
-
-
-//creates the cards with their buttons images and titles and close buttons and like button
-// function createCard(title, imageLink) {
-
-//     const cardElement = cardTemplate.cloneNode(true);
-//     const cardImage = cardElement.querySelector(".elements__image");
-//     const cardTitle = cardElement.querySelector(".elements__title");
-//     const cardDeleteButton = cardElement.querySelector(
-//         ".elements__delete-button"
-//     );
-//     const cardLikeButton = cardElement.querySelector(".elements__like-button");
-
-//     cardTitle.textContent = title;
-//     cardImage.style.backgroundImage = `url(${imageLink})`;
-
-
-//     // transform 3 event listeners to only one
-//     cardLikeButton.addEventListener("click", () => {
-//         cardLikeButton.classList.toggle("elements__like-button_active");
-//     });
-
-//     cardDeleteButton.addEventListener("click", () => {
-//         const listItem = cardDeleteButton.closest(".elements__item");
-//         listItem.remove();
-//     });
-
-//     cardImage.addEventListener("click", () => {
-//         modalImageBig.src = imageLink;
-//         modalImageBig.alt = title;
-//         modalImageBigTitle.textContent = title;
-//         toggleModal(modalImageWindow);
-//     });
-
-//     return cardElement;
-// }
-
-
-
-//form to add card at the beginning when user inputs title and link
+//form to add new card at the beginning when user inputs title and link
 formAddCard.addEventListener("submit", (evt) => {
     evt.preventDefault();
     const createCard = new Card({ name: cardTitleInput.value, link: cardImageLinkInput.value }, '#card-template')
@@ -99,12 +60,10 @@ formAddCard.addEventListener("submit", (evt) => {
     toggleModal(modalAddCard);
 });
 
-//creates initial gallery of cards
-initialCards.forEach((data) => {
 
+initialCards.forEach((data) => {
     const card = new Card(data, '#card-template');
     list.prepend(card.generateCard());
-
 });
 
 
@@ -112,41 +71,40 @@ initialCards.forEach((data) => {
 // modal
 
 //close modal with escape button
-const ESC_KEY = 27;
+// const ESC_KEY = 27;
 
-const closeWithEsc = ({ keyCode }) => {
-    if (keyCode === ESC_KEY) {
-        const activeModal = document.querySelector('.modal_opened');
-        toggleModal(activeModal);
-    }
-}
+// const closeWithEsc = ({ keyCode }) => {
+//     if (keyCode === ESC_KEY) {
+//         const activeModal = document.querySelector('.modal_opened');
+//         toggleModal(activeModal);
+//     }
+// }
 
 
 //close modal on click on overlay
-const closeWithClick = ({ target }) => {
-    if (target.classList.contains('modal__close-button') ||
-        target.classList.contains('modal')) {
-        const activeModal = document.querySelector('.modal_opened');
-        toggleModal(activeModal);
-    }
-};
+// const closeWithClick = ({ target }) => {
+//     if (target.classList.contains('modal__close-button') ||
+//         target.classList.contains('modal')) {
+//         const activeModal = document.querySelector('.modal_opened');
+//         toggleModal(activeModal);
+//     }
+// };
 
 //Close modal if open
-const toggleModal = modal => {
-    const isModalOpened = modal.classList.contains('modal_opened');
+// const toggleModal = modal => {
+//     const isModalOpened = modal.classList.contains('modal_opened');
 
+//     modal.classList.toggle('modal_opened');
 
-    modal.classList.toggle('modal_opened');
+//     if (isModalOpened) {
+//         document.removeEventListener('keydown', closeWithEsc);
+//         modal.removeEventListener('click', closeWithClick);
 
-    if (isModalOpened) {
-        document.removeEventListener('keydown', closeWithEsc);
-        modal.removeEventListener('click', closeWithClick);
-
-    } else {
-        document.addEventListener('keydown', closeWithEsc);
-        modal.addEventListener('click', closeWithClick);
-    }
-};
+//     } else {
+//         document.addEventListener('keydown', closeWithEsc);
+//         modal.addEventListener('click', closeWithClick);
+//     }
+// };
 
 //function to open add-new-card modal
 openModalAddCardButton.addEventListener('click', () => {
