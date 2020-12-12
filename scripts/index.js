@@ -67,45 +67,6 @@ initialCards.forEach((data) => {
 });
 
 
-
-// modal
-
-//close modal with escape button
-// const ESC_KEY = 27;
-
-// const closeWithEsc = ({ keyCode }) => {
-//     if (keyCode === ESC_KEY) {
-//         const activeModal = document.querySelector('.modal_opened');
-//         toggleModal(activeModal);
-//     }
-// }
-
-
-//close modal on click on overlay
-// const closeWithClick = ({ target }) => {
-//     if (target.classList.contains('modal__close-button') ||
-//         target.classList.contains('modal')) {
-//         const activeModal = document.querySelector('.modal_opened');
-//         toggleModal(activeModal);
-//     }
-// };
-
-//Close modal if open
-// const toggleModal = modal => {
-//     const isModalOpened = modal.classList.contains('modal_opened');
-
-//     modal.classList.toggle('modal_opened');
-
-//     if (isModalOpened) {
-//         document.removeEventListener('keydown', closeWithEsc);
-//         modal.removeEventListener('click', closeWithClick);
-
-//     } else {
-//         document.addEventListener('keydown', closeWithEsc);
-//         modal.addEventListener('click', closeWithClick);
-//     }
-// };
-
 //function to open add-new-card modal
 openModalAddCardButton.addEventListener('click', () => {
     toggleModal(modalAddCard);
